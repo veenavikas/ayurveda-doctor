@@ -1,55 +1,139 @@
 'use client';
 
 import Link from 'next/link';
-import { useState, useEffect } from 'react';
+import { usePathname } from 'next/navigation';
+import { useState } from 'react';
+
+const NAV_LINKS = [
+  { href: '/philosophy', label: 'Philosophy' },
+  { href: '/about', label: 'Practitioners' },
+  { href: '/treatments', label: 'Treatments' },
+  { href: '/testimonials', label: 'Journal' },
+];
 
 export default function Navbar() {
-  const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 50);
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  const pathname = usePathname();
+  const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
-    <header 
-      style={{ paddingBlock: scrolled ? '30px' : '80px' }}
-      className={`fixed top-0 w-full z-[100] transition-all duration-700 border-b border-brand-primary/5 ${
-      scrolled ? 'bg-white/95 backdrop-blur-md shadow-sm' : 'bg-transparent'
-    }`}>
-      <div className="container-wide flex justify-between items-center">
-        {/* Branding */}
-        <Link href="/" className="group flex flex-col items-center">
-          <span className="text-2xl md:text-3xl font-heading tracking-[0.1em] uppercase text-brand-primary">Ayurveda</span>
-          <span className="text-[0.55rem] tracking-[0.6em] uppercase text-brand-accent mt-1 group-hover:tracking-[0.8em] transition-all duration-700">The Sanctuary</span>
-        </Link>
+    <>
+      <nav
+        className="fixed top-0 w-full z-50 border-b"
+        style={{
+          background: 'rgba(252,249,248,0.80)',
+          backdropFilter: 'blur(20px)',
+          WebkitBackdropFilter: 'blur(20px)',
+          borderColor: 'rgba(193,200,194,0.15)',
+        }}
+      >
+        <div className="container-max flex items-center justify-between px-desktop py-6" style={{ paddingTop: '1.25rem', paddingBottom: '1.25rem' }}>
+          {/* Logo */}
+          <Link href="/" className="font-headline-md" style={{ color: 'var(--color-primary)', textDecoration: 'none' }}>
+            Prana Ayurveda
+          </Link>
 
-        {/* Navigation links */}
-        <nav className="hidden lg:flex items-center gap-16">
-          {['About', 'Treatments', 'Philosophy', 'Testimonials'].map((item) => (
-            <Link 
-              key={item} 
-              href={`/${item.toLowerCase()}`} 
-              className="text-[0.7rem] font-semibold uppercase tracking-[0.3em] text-brand-primary hover:text-brand-accent transition-colors duration-300"
-            >
-              {item}
-            </Link>
-          ))}
-        </nav>
+          {/* Desktop Nav */}
+          <div className="hidden md:flex items-center gap-8">
+            {NAV_LINKS.map(({ href, label }) => {
+              const active = pathname === href;
+              return (
+                <Link
+                  key={href}
+                  href={href}
+                  className="font-label-caps transition-all duration-500"
+                  style={{
+                    color: active ? 'var(--color-secondary-container)' : 'var(--color-primary)',
+                    opacity: active ? 1 : 0.8,
+                    textDecoration: 'none',
+                    borderBottom: active ? '1px solid var(--color-secondary-container)' : 'none',
+                    paddingBottom: active ? '2px' : '0',
+                  }}
+                  onMouseEnter={(e) => {
+                    if (!active) {
+                      (e.target as HTMLElement).style.opacity = '1';
+                      (e.target as HTMLElement).style.color = 'var(--color-secondary)';
+                    }
+                  }}
+                  onMouseLeave={(e) => {
+                    if (!active) {
+                      (e.target as HTMLElement).style.opacity = '0.8';
+                      (e.target as HTMLElement).style.color = 'var(--color-primary)';
+                    }
+                  }}
+                >
+                  {label}
+                </Link>
+              );
+            })}
+          </div>
 
-        {/* Primary Action */}
-        <div className="flex items-center gap-10">
-          <Link href="/contact" className="hidden xl:block text-[0.65rem] font-bold uppercase tracking-[0.3em] text-brand-primary border-b-2 border-brand-accent/30 pb-1 hover:border-brand-accent transition-all duration-500">
+          {/* CTA */}
+          <Link
+            href="/consultation"
+            className="hidden md:block font-label-caps btn-shimmer"
+            style={{
+              background: 'var(--color-primary)',
+              color: 'var(--color-secondary-container)',
+              padding: '1rem 2rem',
+              textDecoration: 'none',
+              transition: 'all 0.3s ease',
+            }}
+            onMouseEnter={(e) => {
+              (e.currentTarget as HTMLElement).style.background = 'var(--color-primary-container)';
+            }}
+            onMouseLeave={(e) => {
+              (e.currentTarget as HTMLElement).style.background = 'var(--color-primary)';
+            }}
+          >
             Book Consultation
           </Link>
-          <button className="lg:hidden text-brand-primary p-2">
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M4 6h16M4 12h16m-7 6h7" />
-            </svg>
+
+          {/* Mobile hamburger */}
+          <button
+            className="md:hidden"
+            style={{ color: 'var(--color-primary)', background: 'none', border: 'none', cursor: 'pointer' }}
+            onClick={() => setMobileOpen(true)}
+            aria-label="Open menu"
+          >
+            <span className="material-symbols-outlined" style={{ fontSize: '30px' }}>menu</span>
           </button>
         </div>
-      </div>
-    </header>
+      </nav>
+
+      {/* Mobile Drawer */}
+      {mobileOpen && (
+        <div
+          className="fixed inset-0 z-[60] flex flex-col justify-center items-start md:hidden"
+          style={{ background: 'rgba(252,249,248,0.97)', backdropFilter: 'blur(24px)' }}
+        >
+          <button
+            className="absolute top-8 right-8"
+            style={{ color: 'var(--color-primary)', background: 'none', border: 'none', cursor: 'pointer' }}
+            onClick={() => setMobileOpen(false)}
+            aria-label="Close menu"
+          >
+            <span className="material-symbols-outlined" style={{ fontSize: '32px' }}>close</span>
+          </button>
+          <div style={{ padding: '0 var(--spacing-margin-mobile)', display: 'flex', flexDirection: 'column', gap: '2rem' }}>
+            <div style={{ marginBottom: '2rem' }}>
+              <div className="font-headline-lg" style={{ color: 'var(--color-primary)' }}>Prana</div>
+              <div className="font-label-caps" style={{ color: 'var(--color-primary)', opacity: 0.6, marginTop: '0.5rem' }}>Ancestral Wisdom</div>
+            </div>
+            {[{ href: '/', label: 'Home', icon: 'home' }, ...NAV_LINKS.map((l, i) => ({ ...l, icon: ['history_edu','spa','menu_book','mail'][i] })), { href: '/consultation', label: 'Book Now', icon: 'calendar_month' }].map(({ href, label, icon }) => (
+              <Link
+                key={href}
+                href={href}
+                onClick={() => setMobileOpen(false)}
+                className="font-headline-lg"
+                style={{ color: 'var(--color-primary)', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '1rem', transition: 'all 0.3s' }}
+              >
+                <span className="material-symbols-outlined">{icon}</span>
+                <span>{label}</span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      )}
+    </>
   );
 }
