@@ -149,7 +149,6 @@ export default function TreatmentsPage() {
           ))}
         </div>
           </div>
-        </div>
       </section>
 
       <Footer />
