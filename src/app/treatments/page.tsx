@@ -67,28 +67,28 @@ export default function TreatmentsPage() {
       {/* Hero */}
       <section
         style={{
-          maxWidth: 'var(--spacing-container-max)',
-          margin: '0 auto',
-          padding: '4rem var(--spacing-margin-mobile) 6rem',
-          textAlign: 'center',
+          width: '100%',
+          padding: '4rem 5% 6rem',
         }}
       >
+        <div style={{ maxWidth: '1400px', margin: '0 auto', textAlign: 'center' }}>
         <h1 className="font-display-hero" style={{ color: 'var(--color-primary)', marginBottom: '1.5rem' }}>
           Treatments &amp; Services
         </h1>
         <p className="font-body-lg" style={{ color: 'var(--color-on-surface-variant)', maxWidth: '36rem', margin: '0 auto' }}>
           Discover ancient protocols refined for the modern world. Our treatments are designed to restore your natural state of equilibrium through personalized Ayurvedic wisdom.
         </p>
+        </div>
       </section>
 
       {/* Grid */}
       <section
         style={{
-          maxWidth: 'var(--spacing-container-max)',
-          margin: '0 auto',
-          padding: '0 var(--spacing-margin-mobile)',
+          width: '100%',
+          padding: '0 5% 10rem',
         }}
       >
+        <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
         <div
           style={{
             display: 'grid',
@@ -147,6 +147,8 @@ export default function TreatmentsPage() {
               </div>
             </div>
           ))}
+        </div>
+          </div>
         </div>
       </section>
 

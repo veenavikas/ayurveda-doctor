@@ -18,7 +18,7 @@ export default function PhilosophyPage() {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          padding: '0 var(--spacing-margin-mobile)',
+          padding: '0 5%',
           overflow: 'hidden',
         }}
       >
@@ -62,12 +62,12 @@ export default function PhilosophyPage() {
       {/* ── Five Elements ────────────────────── */}
       <section
         style={{
-          padding: 'var(--spacing-section-gap) var(--spacing-margin-mobile)',
-          maxWidth: 'var(--spacing-container-max)',
-          margin: '0 auto',
+          width: '100%',
+          padding: '10rem 5%',
           position: 'relative',
         }}
       >
+        <div style={{ maxWidth: '1400px', margin: '0 auto', position: 'relative' }}>
         {/* Sanskrit watermark */}
         <div
           className="sanskrit-watermark"
@@ -102,9 +102,8 @@ export default function PhilosophyPage() {
               <img
                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuCsw6rawNP23LFfsB-orEcSTwKNaTgtHzjVWFXNFRt_zhxpEmM8d9p1YM6jfNF31SGfgc0gx2_ZH50vBFna2IMBZQCpjW59XVNA6hqoAWWuLU5aYI-sitIjKJlPj1lCTh-kKFJjSoZIvG-3WjirCLISSn6prUclOUKn5pQLhI_XJf2oHwn9gFRO9YoFiix4puVEMTTkC0eXLc3ud1VdQuIc3iVqbTdFwIi2vX5w_YHZ17eR1ixPWkWrtX_YHdYMAkWSib5snou54qo"
                 alt="Dried botanicals on linen with ancient parchment scripts"
+                className="group-hover:scale-105"
                 style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 2s ease' }}
-                onMouseEnter={(e) => { (e.target as HTMLElement).style.transform = 'scale(1.05)'; }}
-                onMouseLeave={(e) => { (e.target as HTMLElement).style.transform = 'scale(1)'; }}
               />
               <div style={{ position: 'absolute', inset: 0, background: 'rgba(4,36,25,0.10)', mixBlendMode: 'multiply' }} />
             </div>
@@ -131,6 +130,8 @@ export default function PhilosophyPage() {
               </div>
             ))}
           </div>
+          </div>
+        </div>
         </div>
       </section>
 
@@ -138,7 +139,7 @@ export default function PhilosophyPage() {
       <section
         style={{
           background: 'var(--color-surface-container-low)',
-          padding: 'var(--spacing-section-gap) var(--spacing-margin-mobile)',
+          padding: '10rem 5%',
         }}
       >
         <div className="container-max">
@@ -166,15 +167,13 @@ export default function PhilosophyPage() {
             ].map(({ name, element, icon, color, desc }) => (
               <div
                 key={name}
-                className="glass-panel"
+                className="glass-panel hover:-translate-y-2"
                 style={{
                   padding: '2.5rem 2rem',
                   borderRadius: '0.5rem',
                   background: color,
                   transition: 'transform 0.4s',
                 }}
-                onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.transform = 'translateY(-6px)'; }}
-                onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.transform = 'translateY(0)'; }}
               >
                 <span className="material-symbols-outlined" style={{ fontSize: '2.5rem', color: 'var(--color-secondary)', marginBottom: '1.5rem', display: 'block' }}>{icon}</span>
                 <p className="font-label-caps" style={{ color: 'var(--color-secondary)', marginBottom: '0.5rem' }}>{element}</p>

@@ -18,7 +18,7 @@ export default function ConsultationPage() {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        padding: 'var(--spacing-section-gap) var(--spacing-margin-mobile)',
+        padding: '10rem 5%',
         position: 'relative',
       }}
     >

@@ -2,63 +2,109 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const NAV_LINKS = [
-  { href: '/philosophy', label: 'Philosophy' },
-  { href: '/about', label: 'Practitioners' },
+  { href: '/about', label: 'About' },
   { href: '/treatments', label: 'Treatments' },
-  { href: '/testimonials', label: 'Journal' },
+  { href: '/philosophy', label: 'Philosophy' },
+  { href: '/testimonials', label: 'Testimonials' },
 ];
 
 export default function Navbar() {
   const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 80);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const isHome = pathname === '/';
+  const baseTextColor = scrolled ? '#ffffff' : (isHome ? '#ffffff' : '#1B3A2D');
 
   return (
     <>
       <nav
-        className="fixed top-0 w-full z-50 border-b"
         style={{
-          background: 'rgba(252,249,248,0.80)',
-          backdropFilter: 'blur(20px)',
-          WebkitBackdropFilter: 'blur(20px)',
-          borderColor: 'rgba(193,200,194,0.15)',
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          width: '100%',
+          zIndex: 100,
+          background: scrolled ? 'rgba(27,58,45,0.92)' : 'transparent',
+          backdropFilter: scrolled ? 'blur(16px)' : 'none',
+          WebkitBackdropFilter: scrolled ? 'blur(16px)' : 'none',
+          padding: scrolled ? '16px 0' : '28px 0',
+          borderBottom: scrolled ? '0.5px solid rgba(200,146,42,0.2)' : 'none',
+          transition: 'all 0.4s ease',
         }}
       >
-        <div className="container-max flex items-center justify-between px-desktop py-6" style={{ paddingTop: '1.25rem', paddingBottom: '1.25rem' }}>
-          {/* Logo */}
-          <Link href="/" className="font-headline-md" style={{ color: 'var(--color-primary)', textDecoration: 'none' }}>
-            Prana Ayurveda
+        <div
+          style={{
+            maxWidth: '1400px',
+            margin: '0 auto',
+            padding: '0 5%',
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+          }}
+        >
+          {/* LEFT: Logo mark */}
+          <Link href="/" style={{ textDecoration: 'none', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+            <span
+              style={{
+                fontFamily: "'Cormorant Garamond', serif",
+                fontWeight: 300,
+                letterSpacing: '0.2em',
+                color: '#C8922A',
+                fontSize: '24px',
+              }}
+            >
+              AYURVEDA
+            </span>
+            <span
+              style={{
+                fontFamily: "'DM Sans', sans-serif",
+                fontSize: '9px',
+                letterSpacing: '0.3em',
+                opacity: 0.5,
+                color: '#C8922A',
+                marginTop: '4px',
+                textTransform: 'uppercase'
+              }}
+            >
+              The Sanctuary
+            </span>
           </Link>
 
-          {/* Desktop Nav */}
-          <div className="hidden md:flex items-center gap-8">
+          {/* CENTER: Nav links */}
+          <div className="hidden md:flex items-center gap-10">
             {NAV_LINKS.map(({ href, label }) => {
               const active = pathname === href;
               return (
                 <Link
                   key={href}
                   href={href}
-                  className="font-label-caps transition-all duration-500"
                   style={{
-                    color: active ? 'var(--color-secondary-container)' : 'var(--color-primary)',
-                    opacity: active ? 1 : 0.8,
+                    fontFamily: "'DM Sans', sans-serif",
+                    fontSize: '11px',
+                    letterSpacing: '0.15em',
+                    textTransform: 'uppercase',
+                    opacity: active ? 1 : 0.65,
+                    color: active ? '#C8922A' : baseTextColor,
                     textDecoration: 'none',
-                    borderBottom: active ? '1px solid var(--color-secondary-container)' : 'none',
-                    paddingBottom: active ? '2px' : '0',
+                    transition: 'all 0.4s ease',
                   }}
                   onMouseEnter={(e) => {
-                    if (!active) {
-                      (e.target as HTMLElement).style.opacity = '1';
-                      (e.target as HTMLElement).style.color = 'var(--color-secondary)';
-                    }
+                    e.currentTarget.style.opacity = '1';
+                    e.currentTarget.style.color = '#C8922A';
                   }}
                   onMouseLeave={(e) => {
-                    if (!active) {
-                      (e.target as HTMLElement).style.opacity = '0.8';
-                      (e.target as HTMLElement).style.color = 'var(--color-primary)';
-                    }
+                    e.currentTarget.style.opacity = active ? '1' : '0.65';
+                    e.currentTarget.style.color = active ? '#C8922A' : baseTextColor;
                   }}
                 >
                   {label}
@@ -67,71 +113,120 @@ export default function Navbar() {
             })}
           </div>
 
-          {/* CTA */}
+          {/* RIGHT: CTA Button */}
           <Link
             href="/consultation"
-            className="hidden md:block font-label-caps btn-shimmer"
+            className="hidden md:inline-block"
             style={{
-              background: 'var(--color-primary)',
-              color: 'var(--color-secondary-container)',
-              padding: '1rem 2rem',
+              fontFamily: "'DM Sans', sans-serif",
+              fontSize: '11px',
+              textTransform: 'uppercase',
+              letterSpacing: '0.15em',
+              padding: '10px 24px',
+              border: '0.5px solid #C8922A',
+              color: '#C8922A',
+              background: 'transparent',
               textDecoration: 'none',
-              transition: 'all 0.3s ease',
+              transition: 'all 0.4s ease',
             }}
             onMouseEnter={(e) => {
-              (e.currentTarget as HTMLElement).style.background = 'var(--color-primary-container)';
+              e.currentTarget.style.background = '#C8922A';
+              e.currentTarget.style.color = '#1C1C1C';
             }}
             onMouseLeave={(e) => {
-              (e.currentTarget as HTMLElement).style.background = 'var(--color-primary)';
+              e.currentTarget.style.background = 'transparent';
+              e.currentTarget.style.color = '#C8922A';
             }}
           >
             Book Consultation
           </Link>
 
-          {/* Mobile hamburger */}
+          {/* Hamburger Icon (Mobile Only) */}
           <button
-            className="md:hidden"
-            style={{ color: 'var(--color-primary)', background: 'none', border: 'none', cursor: 'pointer' }}
+            className="md:hidden flex flex-col justify-center items-center"
+            style={{ width: '20px', height: '20px', background: 'none', border: 'none', cursor: 'pointer', gap: '4px' }}
             onClick={() => setMobileOpen(true)}
             aria-label="Open menu"
           >
-            <span className="material-symbols-outlined" style={{ fontSize: '30px' }}>menu</span>
+            <span style={{ display: 'block', width: '20px', height: '2px', backgroundColor: '#C8922A' }} />
+            <span style={{ display: 'block', width: '20px', height: '2px', backgroundColor: '#C8922A' }} />
+            <span style={{ display: 'block', width: '20px', height: '2px', backgroundColor: '#C8922A' }} />
           </button>
         </div>
       </nav>
 
-      {/* Mobile Drawer */}
+      {/* MOBILE OVERLAY */}
       {mobileOpen && (
         <div
-          className="fixed inset-0 z-[60] flex flex-col justify-center items-start md:hidden"
-          style={{ background: 'rgba(252,249,248,0.97)', backdropFilter: 'blur(24px)' }}
+          style={{
+            position: 'fixed',
+            inset: 0,
+            zIndex: 200,
+            background: '#1B3A2D',
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center',
+            alignItems: 'center',
+            gap: '2rem',
+          }}
         >
+          {/* Close Button */}
           <button
-            className="absolute top-8 right-8"
-            style={{ color: 'var(--color-primary)', background: 'none', border: 'none', cursor: 'pointer' }}
+            style={{
+              position: 'absolute',
+              top: '28px',
+              right: '5%',
+              background: 'none',
+              border: 'none',
+              cursor: 'pointer',
+              color: '#C8922A',
+              fontSize: '32px',
+              lineHeight: 1,
+            }}
             onClick={() => setMobileOpen(false)}
             aria-label="Close menu"
           >
-            <span className="material-symbols-outlined" style={{ fontSize: '32px' }}>close</span>
+            &times;
           </button>
-          <div style={{ padding: '0 var(--spacing-margin-mobile)', display: 'flex', flexDirection: 'column', gap: '2rem' }}>
-            <div style={{ marginBottom: '2rem' }}>
-              <div className="font-headline-lg" style={{ color: 'var(--color-primary)' }}>Prana</div>
-              <div className="font-label-caps" style={{ color: 'var(--color-primary)', opacity: 0.6, marginTop: '0.5rem' }}>Ancestral Wisdom</div>
-            </div>
-            {[{ href: '/', label: 'Home', icon: 'home' }, ...NAV_LINKS.map((l, i) => ({ ...l, icon: ['history_edu','spa','menu_book','mail'][i] })), { href: '/consultation', label: 'Book Now', icon: 'calendar_month' }].map(({ href, label, icon }) => (
-              <Link
-                key={href}
-                href={href}
-                onClick={() => setMobileOpen(false)}
-                className="font-headline-lg"
-                style={{ color: 'var(--color-primary)', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '1rem', transition: 'all 0.3s' }}
-              >
-                <span className="material-symbols-outlined">{icon}</span>
-                <span>{label}</span>
-              </Link>
-            ))}
-          </div>
+
+          {/* Overlay Links */}
+          {NAV_LINKS.map(({ href, label }) => (
+            <Link
+              key={href}
+              href={href}
+              onClick={() => setMobileOpen(false)}
+              style={{
+                fontFamily: "'Cormorant Garamond', serif",
+                fontSize: '2rem',
+                color: '#ffffff',
+                textDecoration: 'none',
+                textTransform: 'uppercase',
+                letterSpacing: '0.1em',
+              }}
+            >
+              {label}
+            </Link>
+          ))}
+          
+          {/* Overlay CTA */}
+          <Link
+            href="/consultation"
+            onClick={() => setMobileOpen(false)}
+            style={{
+              fontFamily: "'DM Sans', sans-serif",
+              fontSize: '11px',
+              textTransform: 'uppercase',
+              letterSpacing: '0.15em',
+              padding: '14px 32px',
+              border: '0.5px solid #C8922A',
+              color: '#C8922A',
+              background: 'transparent',
+              textDecoration: 'none',
+              marginTop: '2rem',
+            }}
+          >
+            Book Consultation
+          </Link>
         </div>
       )}
     </>
