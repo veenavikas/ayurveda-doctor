@@ -130,7 +130,6 @@ export default function PhilosophyPage() {
               </div>
             ))}
           </div>
-          </div>
         </div>
         </div>
       </section>
