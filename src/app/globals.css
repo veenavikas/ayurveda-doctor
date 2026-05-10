@@ -236,14 +236,19 @@ body {
 .btn-shimmer::after {
   content: '';
   position: absolute;
-  top: -50%; left: -50%;
-  width: 200%; height: 200%;
-  background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0) 100%);
-  transform: rotate(45deg) translateY(-100%);
-  transition: transform 0.6s ease-out;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(105deg, transparent 40%, rgba(255,255,255,0.15) 50%, transparent 60%);
+  background-size: 200% 100%;
+  background-position: 200% 0;
+  pointer-events: none;
 }
 .btn-shimmer:hover::after {
-  transform: rotate(45deg) translateY(100%);
+  animation: shimmerSweep 0.6s ease forwards;
+}
+
+@keyframes shimmerSweep {
+  from { background-position: 200% 0; }
+  to { background-position: -200% 0; }
 }
 
 /* Input underline */
@@ -286,3 +291,63 @@ body {
   background-color: var(--color-secondary-container);
   color: var(--color-on-secondary-container);
 }
+
+/* ── Award Winning Gradients & Orbs ──────────────── */
+.gradient-mesh {
+  background: linear-gradient(120deg, var(--color-primary), #08402f, var(--color-primary-container), #021a11);
+  background-size: 400% 400%;
+  animation: gradientMesh 15s ease infinite;
+}
+
+.light-gradient-mesh {
+  background: linear-gradient(120deg, var(--color-surface), #f4eedd, #e8dfc7, var(--color-surface-container));
+  background-size: 400% 400%;
+  animation: gradientMesh 15s ease infinite;
+}
+
+@keyframes gradientMesh {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.text-gradient {
+  background: linear-gradient(to right, var(--color-secondary-fixed), var(--color-on-primary-container));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: 0.6;
+  animation: floatOrb 15s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+
+.orb-1 { width: 40vw; height: 40vw; background: radial-gradient(circle, var(--color-secondary-container), transparent 70%); top: -10%; left: -10%; }
+.orb-2 { width: 50vw; height: 50vw; background: radial-gradient(circle, #83a493, transparent 70%); bottom: -20%; right: -10%; animation-delay: -7s; }
+.orb-3 { width: 30vw; height: 30vw; background: radial-gradient(circle, var(--color-primary-fixed-dim), transparent 70%); top: 40%; left: 40%; animation-delay: -3s; }
+
+@keyframes floatOrb {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(10vw, 5vw) scale(1.1); }
+  100% { transform: translate(-5vw, 15vw) scale(0.9); }
+}
+
+/* Mouse follow glow for interactivity */
+.interactive-glow {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(254,194,86,0.15) 0%, transparent 60%);
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition: width 0.3s, height 0.3s;
+  z-index: 1;
+  filter: blur(40px);
+}
+

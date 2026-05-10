@@ -65,8 +65,19 @@ export default function PhilosophyPage() {
           width: '100%',
           padding: '10rem 5%',
           position: 'relative',
+          zIndex: 20,
+          background: '#F5EFE0',
+          marginTop: '-4rem',
+          borderTopLeftRadius: '3rem',
+          borderTopRightRadius: '3rem',
+          borderTop: '1px solid rgba(200,146,42,0.3)',
+          boxShadow: '0 -20px 60px rgba(0,0,0,0.1)'
         }}
       >
+        {/* Bridge Ornament */}
+        <div style={{ position: 'absolute', top: '-24px', left: '50%', transform: 'translateX(-50%)', width: '48px', height: '48px', background: '#F5EFE0', borderRadius: '50%', border: '1px solid rgba(200,146,42,0.4)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 10, boxShadow: '0 4px 20px rgba(0,0,0,0.2)' }}>
+           <span className="material-icons" style={{ color: '#C8922A', fontSize: '1.2rem' }}>air</span>
+        </div>
         <div style={{ maxWidth: '1400px', margin: '0 auto', position: 'relative' }}>
         {/* Sanskrit watermark */}
         <div
@@ -139,8 +150,19 @@ export default function PhilosophyPage() {
         style={{
           background: 'var(--color-surface-container-low)',
           padding: '10rem 5%',
+          position: 'relative',
+          zIndex: 30,
+          marginTop: '-4rem',
+          borderTopLeftRadius: '3rem',
+          borderTopRightRadius: '3rem',
+          borderTop: '1px solid rgba(200,146,42,0.2)',
+          boxShadow: '0 -20px 60px rgba(0,0,0,0.1)'
         }}
       >
+        {/* Bridge Ornament */}
+        <div style={{ position: 'absolute', top: '-24px', left: '50%', transform: 'translateX(-50%)', width: '48px', height: '48px', background: 'var(--color-surface-container-low)', borderRadius: '50%', border: '1px solid rgba(200,146,42,0.4)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 10, boxShadow: '0 4px 20px rgba(0,0,0,0.2)' }}>
+           <span className="material-icons" style={{ color: '#C8922A', fontSize: '1.2rem' }}>group_work</span>
+        </div>
         <div className="container-max">
           <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
             <p className="font-label-caps" style={{ color: 'var(--color-secondary)', marginBottom: '1rem' }}>Tri-Dosha</p>

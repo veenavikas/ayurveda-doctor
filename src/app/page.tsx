@@ -1,6 +1,8 @@
 import Link from 'next/link';
 import Footer from '@/components/Footer';
 import HeroSection from '@/components/HeroSection';
+import OfferingsGrid from '@/components/OfferingsGrid';
+import MagneticButton from '@/components/MagneticButton';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -15,7 +17,11 @@ export default function HomePage() {
       <HeroSection />
 
       {/* ── 2. THE LEGACY ──────────────────── */}
-      <section className="bg-brand-cream section-gap relative">
+      <section className="bg-brand-cream section-gap relative z-10" style={{ marginTop: '-4rem', paddingTop: '8rem', borderTopLeftRadius: '3rem', borderTopRightRadius: '3rem', borderTop: '1px solid rgba(200,146,42,0.3)', boxShadow: '0 -20px 60px rgba(0,0,0,0.5)' }}>
+        {/* Bridge Ornament: Hero -> Legacy */}
+        <div style={{ position: 'absolute', top: '-24px', left: '50%', transform: 'translateX(-50%)', width: '48px', height: '48px', background: '#F5EFE0', borderRadius: '50%', border: '1px solid rgba(200,146,42,0.4)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 10, boxShadow: '0 4px 20px rgba(0,0,0,0.2)' }}>
+           <span className="material-icons" style={{ color: '#C8922A', fontSize: '1.2rem' }}>auto_awesome</span>
+        </div>
         <div className="container-max px-desktop">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-24 items-center">
             <div className="lg:col-span-5 relative">
@@ -72,49 +78,36 @@ export default function HomePage() {
       </section>
 
       {/* ── 3. RITUALS GRID ─────────────────── */}
-      <section className="bg-brand-ink text-brand-cream section-gap" style={{ background: 'var(--color-tertiary)' }}>
+      <section className="text-brand-cream section-gap relative z-20" style={{ background: '#1C1C1C', marginTop: '-4rem', paddingTop: '8rem', borderTopLeftRadius: '3rem', borderTopRightRadius: '3rem', borderTop: '1px solid rgba(200,146,42,0.15)', boxShadow: '0 -20px 60px rgba(0,0,0,0.1)' }}>
+        {/* Bridge Ornament: Legacy -> Treatments */}
+        <div style={{ position: 'absolute', top: '-24px', left: '50%', transform: 'translateX(-50%)', width: '48px', height: '48px', background: '#1C1C1C', borderRadius: '50%', border: '1px solid rgba(200,146,42,0.4)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 10, boxShadow: '0 4px 20px rgba(0,0,0,0.4)' }}>
+           <span className="material-icons" style={{ color: '#C8922A', fontSize: '1.2rem' }}>water_drop</span>
+        </div>
         <div className="container-max px-desktop">
           <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '6rem', gap: '3rem' }}>
             <div style={{ maxWidth: '42rem' }}>
               <span className="font-label-caps" style={{ color: 'var(--color-secondary-fixed)', marginBottom: '1.5rem', display: 'block' }}>Offerings</span>
               <h2 className="text-white leading-tight" style={{ fontFamily: 'var(--font-garamond)', fontSize: 'clamp(3rem, 6vw, 5rem)' }}>Rituals of <span className="italic" style={{ color: 'var(--color-secondary-fixed)' }}>Equilibrium.</span></h2>
             </div>
-            <Link
+            <MagneticButton
               href="/treatments"
-              className="font-label-caps no-underline border-b hover:tracking-widest transition-all duration-500"
+              className="font-label-caps no-underline border-b hover:tracking-widest"
               style={{ color: 'var(--color-secondary-fixed)', borderColor: 'rgba(255,222,171,0.3)', paddingBottom: '0.5rem', marginBottom: '0.5rem' }}
             >
               All Rituals
-            </Link>
+            </MagneticButton>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '1px', background: 'rgba(255,255,255,0.08)' }}>
-            {[
-              { title: 'Panchakarma', sub: 'Biological Reset', icon: 'spa' },
-              { title: 'Nadi Pariksha', sub: 'Pulse Wisdom', icon: 'fingerprint' },
-              { title: 'Rasayana', sub: 'Cellular Rejuvenation', icon: 'energy_savings_leaf' },
-              { title: 'Marma Therapy', sub: 'Vital Energy', icon: 'self_improvement' },
-            ].map(({ title, sub, icon }) => (
-              <div
-                key={title}
-                className="group relative transition-all duration-700 hover:bg-brand-primary"
-                style={{ background: 'var(--color-tertiary)', padding: '3.5rem 2.5rem' }}
-              >
-                <div className="relative z-10">
-                  <span className="material-symbols-outlined transition-transform duration-700 group-hover:-translate-y-2" style={{ color: 'var(--color-secondary-fixed)', fontSize: '2.5rem', marginBottom: '2rem', display: 'block' }}>{icon}</span>
-                  <p className="font-label-caps" style={{ color: 'var(--color-secondary-fixed)', fontSize: '0.6rem', marginBottom: '1rem' }}>{sub}</p>
-                  <h3 className="text-white" style={{ fontFamily: 'var(--font-garamond)', fontSize: '1.75rem', fontWeight: 400 }}>{title}</h3>
-                </div>
-                {/* Hover Reveal */}
-                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700" style={{ background: 'var(--color-primary-container)' }} />
-              </div>
-            ))}
-          </div>
+          <OfferingsGrid />
         </div>
       </section>
 
       {/* ── 4. CALL TO ACTION ────────────────── */}
-      <section className="bg-brand-cream relative overflow-hidden" style={{ padding: '10rem 0', background: 'var(--color-surface-container-low)' }}>
+      <section className="relative overflow-hidden z-30" style={{ padding: '10rem 0', background: '#1B3A2D', marginTop: '-4rem', borderTopLeftRadius: '3rem', borderTopRightRadius: '3rem', borderTop: '1px solid rgba(200,146,42,0.2)', boxShadow: '0 -20px 60px rgba(0,0,0,0.4)' }}>
+        {/* Bridge Ornament: Treatments -> CTA */}
+        <div style={{ position: 'absolute', top: '-24px', left: '50%', transform: 'translateX(-50%)', width: '48px', height: '48px', background: '#1B3A2D', borderRadius: '50%', border: '1px solid rgba(200,146,42,0.4)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 10, boxShadow: '0 4px 20px rgba(0,0,0,0.5)' }}>
+           <span className="material-icons" style={{ color: '#C8922A', fontSize: '1.2rem' }}>self_improvement</span>
+        </div>
         <div className="container-max px-desktop text-center flex flex-col items-center">
           <FadeUp>
             <h2 className="tracking-tighter" style={{ fontFamily: 'var(--font-garamond)', color: 'var(--color-primary)', fontSize: 'clamp(4rem, 8vw, 8rem)', marginBottom: '5rem', lineHeight: 1 }}>
@@ -122,14 +115,14 @@ export default function HomePage() {
             </h2>
           </FadeUp>
           
-          <Link
+          <MagneticButton
             href="/consultation"
-            className="group relative inline-flex items-center justify-center no-underline overflow-hidden transition-all duration-700 hover:scale-105 shadow-2xl"
+            className="group relative inline-flex items-center justify-center no-underline overflow-hidden shadow-2xl"
             style={{ background: 'var(--color-primary)', color: '#ffffff', padding: '1.5rem 4rem', border: 'none' }}
           >
             <span className="relative z-10 font-label-caps" style={{ letterSpacing: '0.3em' }}>Request Consultation</span>
             <div className="absolute inset-0 translate-y-full group-hover:translate-y-0 transition-transform duration-700" style={{ background: 'var(--color-secondary)' }} />
-          </Link>
+          </MagneticButton>
         </div>
       </section>
 

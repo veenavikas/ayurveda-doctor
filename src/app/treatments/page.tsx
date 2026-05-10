@@ -63,92 +63,115 @@ const TREATMENTS = [
 
 export default function TreatmentsPage() {
   return (
-    <main style={{ paddingTop: '7.5rem', paddingBottom: 'var(--spacing-section-gap)' }}>
+    <main className="light-gradient-mesh relative" style={{ paddingTop: '7.5rem', paddingBottom: 'var(--spacing-section-gap)' }}>
+      {/* Floating Ambient Light */}
+      <div className="absolute top-0 left-0 w-full h-[50vh] bg-gradient-to-b from-white/60 to-transparent pointer-events-none z-0" />
+      
       {/* Hero */}
       <section
+        className="relative z-10"
         style={{
           width: '100%',
-          padding: '4rem 5% 6rem',
+          padding: '6rem 5% 8rem',
         }}
       >
         <div style={{ maxWidth: '1400px', margin: '0 auto', textAlign: 'center' }}>
-        <h1 className="font-display-hero" style={{ color: 'var(--color-primary)', marginBottom: '1.5rem' }}>
-          Treatments &amp; Services
-        </h1>
-        <p className="font-body-lg" style={{ color: 'var(--color-on-surface-variant)', maxWidth: '36rem', margin: '0 auto' }}>
-          Discover ancient protocols refined for the modern world. Our treatments are designed to restore your natural state of equilibrium through personalized Ayurvedic wisdom.
-        </p>
+          <span className="font-label-caps text-gradient mb-6 block" style={{ letterSpacing: '0.3em' }}>OUR OFFERINGS</span>
+          <h1 className="font-display-hero" style={{ color: 'var(--color-primary)', marginBottom: '1.5rem', filter: 'drop-shadow(0 10px 20px rgba(0,0,0,0.05))' }}>
+            Treatments <span className="italic" style={{ color: 'var(--color-secondary)' }}>&amp;</span> Services
+          </h1>
+          <p className="font-body-lg" style={{ color: 'var(--color-on-surface-variant)', maxWidth: '40rem', margin: '0 auto', lineHeight: '1.8' }}>
+            Discover ancient protocols refined for the modern world. Our treatments are designed to restore your natural state of equilibrium through personalized Ayurvedic wisdom.
+          </p>
         </div>
       </section>
 
       {/* Grid */}
       <section
+        className="relative z-20"
         style={{
           width: '100%',
-          padding: '0 5% 10rem',
+          padding: '10rem 5%',
+          background: '#1C1C1C',
+          marginTop: '-4rem',
+          borderTopLeftRadius: '3rem',
+          borderTopRightRadius: '3rem',
+          borderTop: '1px solid rgba(200,146,42,0.15)',
+          boxShadow: '0 -20px 60px rgba(0,0,0,0.1)'
         }}
       >
+        {/* Bridge Ornament */}
+        <div style={{ position: 'absolute', top: '-24px', left: '50%', transform: 'translateX(-50%)', width: '48px', height: '48px', background: '#1C1C1C', borderRadius: '50%', border: '1px solid rgba(200,146,42,0.4)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 10, boxShadow: '0 4px 20px rgba(0,0,0,0.4)' }}>
+           <span className="material-icons" style={{ color: '#C8922A', fontSize: '1.2rem' }}>spa</span>
+        </div>
         <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
-        <div
-          style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(2, 1fr)',
-            gap: '2rem',
-          }}
-        >
-          {TREATMENTS.map(({ id, sub, title, desc, cta, img, alt, full }) => (
-            <div
-              key={id}
-              className="treatment-card"
-              style={{
-                gridColumn: full ? 'span 2' : 'span 1',
-                position: 'relative',
-                overflow: 'hidden',
-                aspectRatio: full ? '2/1' : '1/1',
-                background: 'var(--color-surface-container-low)',
-                cursor: 'pointer',
-              }}
-            >
-              <img
-                src={img}
-                alt={alt}
-                style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
-              />
-              {/* Base overlay */}
-              <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(4,36,25,0.80), rgba(4,36,25,0.20), transparent)' }} />
-              {/* Static label */}
-              <div style={{ position: 'absolute', bottom: 0, left: 0, width: '100%', padding: '2rem', zIndex: 10 }}>
-                <span className="font-label-caps" style={{ color: 'var(--color-secondary-container)', display: 'block', marginBottom: '0.5rem' }}>{sub}</span>
-                <h2 className="font-headline-lg" style={{ color: 'white' }}>{title}</h2>
-              </div>
-              {/* Hover overlay */}
+          <div
+            style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(2, 1fr)',
+              gap: '2.5rem',
+            }}
+          >
+            {TREATMENTS.map(({ id, sub, title, desc, cta, img, alt, full }) => (
               <div
-                className="treatment-card-overlay glass-card"
-                style={{ position: 'absolute', inset: 0, padding: full ? '3rem' : '2rem', display: 'flex', flexDirection: 'column', justifyContent: 'flex-end' }}
+                key={id}
+                className="treatment-card group rounded-3xl"
+                style={{
+                  gridColumn: full ? 'span 2' : 'span 1',
+                  position: 'relative',
+                  overflow: 'hidden',
+                  aspectRatio: full ? '2/1' : '1/1',
+                  background: 'var(--color-surface-container-low)',
+                  cursor: 'pointer',
+                  boxShadow: '0 20px 40px rgba(0,0,0,0.08)',
+                  transition: 'transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.6s ease',
+                }}
               >
-                <div style={{ maxWidth: full ? '50%' : '100%' }}>
-                  <span className="font-label-caps" style={{ color: 'var(--color-primary)', display: 'block', marginBottom: '0.5rem' }}>{sub}</span>
-                  <h2 className="font-headline-lg" style={{ color: 'var(--color-primary)', marginBottom: '1rem' }}>{title}</h2>
-                  <p className="font-body-md" style={{ color: 'var(--color-on-surface-variant)', marginBottom: '1.5rem' }}>{desc}</p>
-                  <Link
-                    href="/consultation"
-                    className="font-label-caps btn-shimmer"
-                    style={{
-                      background: 'var(--color-primary)',
-                      color: 'var(--color-secondary-container)',
-                      padding: '1rem 2rem',
-                      textDecoration: 'none',
-                      display: 'inline-block',
-                    }}
-                  >
-                    {cta}
-                  </Link>
+                <img
+                  src={img}
+                  alt={alt}
+                  style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', transition: 'transform 1.2s cubic-bezier(0.16, 1, 0.3, 1)' }}
+                  className="group-hover:scale-105"
+                />
+                
+                {/* Stunning Gradient Overlay */}
+                <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(4,36,25,0.95) 0%, rgba(4,36,25,0.40) 50%, transparent 100%)', opacity: 0.9, transition: 'opacity 0.5s ease' }} className="group-hover:opacity-100" />
+                
+                {/* Static label */}
+                <div style={{ position: 'absolute', bottom: 0, left: 0, width: '100%', padding: '3rem', zIndex: 10, transform: 'translateY(0)', transition: 'transform 0.6s ease, opacity 0.6s ease' }} className="group-hover:-translate-y-8 group-hover:opacity-0">
+                  <span className="font-label-caps" style={{ color: 'var(--color-secondary-container)', display: 'block', marginBottom: '0.5rem' }}>{sub}</span>
+                  <h2 className="font-headline-lg" style={{ color: 'white' }}>{title}</h2>
+                </div>
+                
+                {/* Hover overlay content */}
+                <div
+                  className="treatment-card-overlay"
+                  style={{ position: 'absolute', inset: 0, padding: full ? '4rem' : '3rem', display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', background: 'linear-gradient(to top, rgba(4,36,25,0.95) 0%, rgba(4,36,25,0.85) 60%, rgba(4,36,25,0.4) 100%)', backdropFilter: 'blur(8px)' }}
+                >
+                  <div style={{ maxWidth: full ? '60%' : '100%' }}>
+                    <span className="font-label-caps" style={{ color: 'var(--color-secondary-container)', display: 'block', marginBottom: '1rem', letterSpacing: '0.2em' }}>{sub}</span>
+                    <h2 className="font-headline-lg" style={{ color: 'white', marginBottom: '1rem' }}>{title}</h2>
+                    <p className="font-body-md" style={{ color: 'rgba(255,255,255,0.8)', marginBottom: '2.5rem', lineHeight: '1.7' }}>{desc}</p>
+                    <Link
+                      href="/consultation"
+                      className="font-label-caps btn-shimmer flex items-center justify-center rounded-full"
+                      style={{
+                        background: 'var(--color-secondary-fixed)',
+                        color: 'var(--color-primary)',
+                        padding: '1.25rem 2.5rem',
+                        textDecoration: 'none',
+                        display: 'inline-flex',
+                        letterSpacing: '0.15em'
+                      }}
+                    >
+                      {cta}
+                    </Link>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
-        </div>
+            ))}
           </div>
+        </div>
       </section>
 
       <Footer />

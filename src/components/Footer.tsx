@@ -106,16 +106,26 @@ export default function Footer() {
             Sanctuary
           </h4>
           <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-            {['Our History', 'Methodology', 'Testimonials', 'Consultation'].map((label) => (
-              <li key={label}>
-                <Link
-                  href={`/${label.split(' ').pop()?.toLowerCase()}`}
-                  className="footer-link-main"
-                >
-                  {label}
-                </Link>
-              </li>
-            ))}
+            <li>
+              <Link href="/about" className="footer-link-main">
+                Our History
+              </Link>
+            </li>
+            <li>
+              <Link href="/philosophy" className="footer-link-main">
+                Methodology
+              </Link>
+            </li>
+            <li>
+              <Link href="/testimonials" className="footer-link-main">
+                Testimonials
+              </Link>
+            </li>
+            <li>
+              <Link href="/consultation" className="footer-link-main">
+                Consultation
+              </Link>
+            </li>
           </ul>
         </div>
 
@@ -143,14 +153,15 @@ export default function Footer() {
               flexDirection: 'column',
             }}
           >
-            <span>108 Lotus Temple Road</span>
-            <span>Kerala, India 682001</span>
-            <span style={{ marginTop: '0.5rem' }}>+91 98765 43210</span>
+            <span style={{ marginBottom: '0.4rem' }}>108 Lotus Temple Road</span>
+            <span style={{ marginBottom: '0.4rem' }}>Kerala, India 682001</span>
+            <span style={{ marginBottom: '0.4rem' }}>+91 98765 43210</span>
             <a
-              href="mailto:care@ayurvedasanctuary.com"
+              href="mailto:care@sushruthanaturecure.com"
               className="footer-email-link"
+              style={{ marginBottom: '0.4rem' }}
             >
-              care@ayurvedasanctuary.com
+              care@sushruthanaturecure.com
             </a>
           </div>
         </div>
@@ -170,7 +181,7 @@ export default function Footer() {
           }}
         >
           <span style={{ fontFamily: "'DM Sans', sans-serif", fontSize: '11px', color: 'rgba(245,239,224,0.2)' }}>
-            © 2026 Ayurveda Sanctuary. All Rights Reserved.
+            © 2026 Sushrutha Nature Cure. All Rights Reserved.
           </span>
           <div style={{ display: 'flex', gap: '1.5rem' }}>
             {['Privacy', 'Terms', 'Cookies'].map((label) => (

@@ -4,14 +4,20 @@ import Navbar from "@/components/Navbar";
 import SmoothScroll from "@/components/SmoothScroll";
 
 export const metadata: Metadata = {
-  title: "Prana Ayurveda | Ancient Wisdom. Modern Healing.",
+  title: "Sushrutha Nature Cure | Ancestral Wisdom. Modern Equilibrium.",
   description:
-    "A world-class Ayurvedic sanctuary bridging ancestral healing lineages with modern clinical precision. Book your consultation today.",
+    "A sanctuary of Nature Cure rooted in the lineage of Sushrutha.",
   keywords: ["Ayurveda", "Panchakarma", "Nadi Pariksha", "Holistic Healing", "Dosha", "Wellness"],
   openGraph: {
-    title: "Prana Ayurveda | Ancient Wisdom. Modern Healing.",
-    description: "A world-class Ayurvedic sanctuary bridging ancestral healing lineages with modern clinical precision.",
+    title: "Sushrutha Nature Cure | Ancestral Wisdom. Modern Equilibrium.",
+    description: "A sanctuary of Nature Cure rooted in the lineage of Sushrutha.",
     type: "website",
+    images: ["/og-image.jpg"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Sushrutha Nature Cure | Ancestral Wisdom. Modern Equilibrium.",
+    description: "A sanctuary of Nature Cure rooted in the lineage of Sushrutha.",
   },
 };
 
@@ -27,6 +33,10 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link
           href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+          rel="stylesheet"
+        />
+        <link 
+          href="https://fonts.googleapis.com/icon?family=Material+Icons" 
           rel="stylesheet"
         />
       </head>
