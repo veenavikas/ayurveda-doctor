@@ -174,7 +174,7 @@ export default function HeroSection() {
       {/* Vertical Text Accent */}
       <div className="hidden xl:block absolute right-12 top-1/2 -translate-y-1/2 opacity-30 pointer-events-none z-10">
         <span className="font-label-caps text-[0.6rem] tracking-[1em] text-transparent bg-clip-text bg-gradient-to-b from-white to-white/20" style={{ writingMode: 'vertical-rl' }}>
-          SUSHRUTHA NATURE CURE · ANCESTRAL WISDOM
+          AVM NATURE CARE · ANCESTRAL WISDOM
         </span>
       </div>
     </section>

@@ -2,22 +2,23 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import SmoothScroll from "@/components/SmoothScroll";
+import WhatsAppWidget from "@/components/WhatsAppWidget";
 
 export const metadata: Metadata = {
-  title: "Sushrutha Nature Cure | Ancestral Wisdom. Modern Equilibrium.",
+  title: "AVM Nature Care | Ancestral Wisdom. Modern Equilibrium.",
   description:
-    "A sanctuary of Nature Cure rooted in the lineage of Sushrutha.",
+    "A sanctuary of Nature Cure rooted in ancestral wisdom.",
   keywords: ["Ayurveda", "Panchakarma", "Nadi Pariksha", "Holistic Healing", "Dosha", "Wellness"],
   openGraph: {
-    title: "Sushrutha Nature Cure | Ancestral Wisdom. Modern Equilibrium.",
-    description: "A sanctuary of Nature Cure rooted in the lineage of Sushrutha.",
+    title: "AVM Nature Care | Ancestral Wisdom. Modern Equilibrium.",
+    description: "A sanctuary of Nature Cure rooted in ancestral wisdom.",
     type: "website",
     images: ["/og-image.jpg"],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Sushrutha Nature Cure | Ancestral Wisdom. Modern Equilibrium.",
-    description: "A sanctuary of Nature Cure rooted in the lineage of Sushrutha.",
+    title: "AVM Nature Care | Ancestral Wisdom. Modern Equilibrium.",
+    description: "A sanctuary of Nature Cure rooted in ancestral wisdom.",
   },
 };
 
@@ -45,6 +46,7 @@ export default function RootLayout({
         <SmoothScroll>
           <Navbar />
           {children}
+          <WhatsAppWidget />
         </SmoothScroll>
       </body>
     </html>

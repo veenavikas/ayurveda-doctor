@@ -153,9 +153,15 @@ export default function Footer() {
               flexDirection: 'column',
             }}
           >
-            <span style={{ marginBottom: '0.4rem' }}>108 Lotus Temple Road</span>
-            <span style={{ marginBottom: '0.4rem' }}>Kerala, India 682001</span>
-            <span style={{ marginBottom: '0.4rem' }}>+91 98765 43210</span>
+            <span style={{ marginBottom: '0.4rem' }}>AVM nature Care</span>
+            <span style={{ marginBottom: '0.4rem' }}>Madhavapatnam, Kakinada</span>
+            <a
+              href="tel:+918897722563"
+              className="footer-email-link"
+              style={{ marginBottom: '0.4rem' }}
+            >
+              +91 88977 22563
+            </a>
             <a
               href="mailto:care@sushruthanaturecure.com"
               className="footer-email-link"
@@ -181,7 +187,7 @@ export default function Footer() {
           }}
         >
           <span style={{ fontFamily: "'DM Sans', sans-serif", fontSize: '11px', color: 'rgba(245,239,224,0.2)' }}>
-            © 2026 Sushrutha Nature Cure. All Rights Reserved.
+            © 2026 AVM Nature Care. All Rights Reserved.
           </span>
           <div style={{ display: 'flex', gap: '1.5rem' }}>
             {['Privacy', 'Terms', 'Cookies'].map((label) => (

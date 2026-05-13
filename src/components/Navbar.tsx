@@ -113,33 +113,55 @@ export default function Navbar() {
             })}
           </div>
 
-          {/* RIGHT: CTA Button */}
-          <Link
-            href="/consultation"
-            className="hidden md:inline-block"
-            style={{
-              fontFamily: "'DM Sans', sans-serif",
-              fontSize: '11px',
-              textTransform: 'uppercase',
-              letterSpacing: '0.15em',
-              padding: '10px 24px',
-              border: '0.5px solid #C8922A',
-              color: '#C8922A',
-              background: 'transparent',
-              textDecoration: 'none',
-              transition: 'all 0.4s ease',
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.background = '#C8922A';
-              e.currentTarget.style.color = '#1C1C1C';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.background = 'transparent';
-              e.currentTarget.style.color = '#C8922A';
-            }}
-          >
-            Book Consultation
-          </Link>
+          {/* RIGHT: CTA Button & Phone */}
+          <div className="hidden md:flex items-center gap-8">
+            <a
+              href="tel:+918897722563"
+              style={{
+                fontFamily: "'DM Sans', sans-serif",
+                fontSize: '11px',
+                letterSpacing: '0.1em',
+                color: baseTextColor,
+                textDecoration: 'none',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '8px',
+                transition: 'opacity 0.3s ease',
+              }}
+              onMouseEnter={(e) => (e.currentTarget.style.opacity = '0.7')}
+              onMouseLeave={(e) => (e.currentTarget.style.opacity = '1')}
+            >
+              <span className="material-icons" style={{ fontSize: '16px', color: '#C8922A' }}>
+                call
+              </span>
+              +91 88977 22563
+            </a>
+            <Link
+              href="/consultation"
+              style={{
+                fontFamily: "'DM Sans', sans-serif",
+                fontSize: '11px',
+                textTransform: 'uppercase',
+                letterSpacing: '0.15em',
+                padding: '10px 24px',
+                border: '0.5px solid #C8922A',
+                color: '#C8922A',
+                background: 'transparent',
+                textDecoration: 'none',
+                transition: 'all 0.4s ease',
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.background = '#C8922A';
+                e.currentTarget.style.color = '#1C1C1C';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.background = 'transparent';
+                e.currentTarget.style.color = '#C8922A';
+              }}
+            >
+              Book Consultation
+            </Link>
+          </div>
 
           {/* Hamburger Icon (Mobile Only) */}
           <button
@@ -207,6 +229,26 @@ export default function Navbar() {
               {label}
             </Link>
           ))}
+
+          {/* Mobile Phone Link */}
+          <a
+            href="tel:+918897722563"
+            style={{
+              fontFamily: "'DM Sans', sans-serif",
+              fontSize: '18px',
+              color: '#C8922A',
+              textDecoration: 'none',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '10px',
+              marginTop: '1rem',
+            }}
+          >
+            <span className="material-icons" style={{ fontSize: '20px' }}>
+              call
+            </span>
+            +91 88977 22563
+          </a>
           
           {/* Overlay CTA */}
           <Link

@@ -6,9 +6,9 @@ import MagneticButton from '@/components/MagneticButton';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Sushrutha Nature Cure | Ancestral Wisdom. Modern Equilibrium.',
+  title: 'AVM Nature Care | Ancestral Wisdom. Modern Equilibrium.',
   description:
-    'A sanctuary of Nature Cure rooted in the lineage of the Father of Surgery. Restoring biological equilibrium through classical precision and ancestral wisdom.',
+    'A sanctuary of Nature Cure rooted in ancestral wisdom. Restoring biological equilibrium through classical precision and ancestral wisdom.',
 };
 
 export default function HomePage() {
