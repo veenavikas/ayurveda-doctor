@@ -10,60 +10,60 @@ export const metadata: Metadata = {
 
 const TREATMENTS = [
   {
-    id: 'panchakarma',
-    sub: 'Signature Detoxification',
-    title: 'Panchakarma',
-    desc: 'The ultimate mind-body healing experience. A comprehensive, customized system of detoxification therapies designed to purify the body of deep-rooted toxins and restore doshic balance.',
-    cta: 'Explore Protocol',
-    img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuACiRQ0n9VZtuoe2AOKvvocR6TKyqSMoer39nxWY3DSy-pbq_x7c3MsJy6iwiQdSaHGtwRb42qExpjSj8mc2KW9wfzYfx_UIulyk35qW4yUv0vvpi2FDwXrZF_Fs6AY-0ImREvxGdxHxUdBLt2xjoHmS9inN7-RbBg1VJP9BfSfpikYmc60C9qHAg9z1j0gGamfKs_-4S38D7_JvTRcFwzwv8_bz9dt-3x37Zqd-HMtyF9BogoIZy_HR0rEYaqF8moKGPaStkGHQuc',
-    alt: 'Ayurvedic oil massage in serene spa',
+    id: 'acupuncture',
+    sub: 'Energy Flow',
+    title: 'Acupuncture Treatment',
+    desc: 'Precise stimulation of meridians to restore biological equilibrium and alleviate chronic pain.',
+    cta: 'Learn More',
+    img: 'https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&q=80',
+    alt: 'Acupuncture treatment',
     full: false,
   },
   {
-    id: 'nadi',
-    sub: 'Diagnostic Assessment',
-    title: 'Nadi Pariksha',
-    desc: 'Ancient pulse diagnosis to accurately pinpoint physiological and psychological imbalances before they manifest as disease. The foundation of every personalized treatment plan.',
-    cta: 'Schedule Diagnosis',
-    img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuD3pO-fd47UvOcHdDeYmhmNTc-obTjsfwgA76HtCQAWlSj0N9JhNtsgc3ECXaiTlr8hHCVgvxCnUt0EPUZez72yV39iDBOI2xgECy-PeTZN-03WgLBGGzZxUnkCi_rIPRGDYqTNyJiYBmeFTrQtqPKngp0jUg3dVlfTqwrV6ZOKjk91vVVvCICwO-WmPEG2PpkJEqpcqnv22qUwVg8o5mtZPAq0q16kFNXsKF5e0y_6xYhPTMbRABHXc59JUw_Iq1t1HNkb7MlhywU',
-    alt: 'Ayurvedic practitioner performing pulse diagnosis',
+    id: 'reflexology',
+    sub: 'Zone Therapy',
+    title: 'Reflexology',
+    desc: 'Targeted pressure application to reflex zones that correspond to internal organ systems.',
+    cta: 'Learn More',
+    img: 'https://images.unsplash.com/photo-1519415510236-8559b1985a2b?auto=format&fit=crop&q=80',
+    alt: 'Reflexology therapy',
     full: false,
   },
   {
-    id: 'rasayana',
-    sub: 'Rejuvenation',
-    title: 'Rasayana Therapy',
-    desc: 'Specialized therapies focused on cellular regeneration, boosting immunity, and promoting longevity. Utilizing potent herbal formulations and deeply nourishing bodywork.',
-    cta: 'View Therapies',
-    img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuD0S30HkSYZ3AXZvPFdkwY9UhbYwosN_5S2e-kJ-tJaZNAKXdjjVpcooPKQ4_9VEClB7HZEg0BRTsq-sQwWxYjGxweH0BfxiJT9SW6mr8968EVU1JxJrcsSP6qNOfC2DAK0_KVY4IDU_Zo6-Waee6yzSJ0zjhGKGkHrc_laZXpykhYRJE5eC1QjnugAV8QcRKYHKhTfkCK-quPbswfE2QWd5JTf4bf2pfO1Yg7yipx5aNikLZ7xb3evJK3cs5bf_NX_QGqcTDOX-ow',
-    alt: 'Ayurvedic herbs mortar and pestle',
+    id: 'moxa',
+    sub: 'Thermal Healing',
+    title: 'Moxa Therapy',
+    desc: 'Ancient heat therapy utilizing aged mugwort to strengthen the blood and stimulate life force.',
+    cta: 'Learn More',
+    img: 'https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?auto=format&fit=crop&q=80',
+    alt: 'Moxa therapy',
     full: false,
   },
   {
-    id: 'womens',
-    sub: 'Specialized Care',
-    title: "Women's Wellness",
-    desc: 'Holistic protocols addressing hormonal balance, fertility, postpartum care, and menopausal transitions through diet, herbs, and targeted therapies.',
-    cta: 'Discover Programs',
-    img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAm-0J5s0J6Ot53Z_muMGGLj7OVBvNFyle7u65WE8nq5YbAM3nmH8_PwBzm4djf1VxrSeYDS7TOAo47ct50HO6AQ2GJVgF6V1yoklepPnJnfhA81CD7YDrwE3CimmvMSXKaKGZr3wXS7tftiEHF9xI8o7WnuDK1vq32DLICRAtH47qMFQxhZZ8DCstlHuSa7FHEnS8Np6_x77shDYMpYyS4QDqwrroXVbV8JeoD9HVunKMF5BhYfLHBsi_VGu245Pcg0ULUdnXOfZs',
-    alt: 'Woman meditating in serene wellness space',
+    id: 'cupping',
+    sub: 'Decompression',
+    title: 'Cupping & Hijama',
+    desc: 'Specialized vacuum therapy and traditional blood-letting to remove stagnant toxins and improve circulation.',
+    cta: 'Learn More',
+    img: 'https://images.unsplash.com/photo-1552693673-1bf958298935?auto=format&fit=crop&q=80',
+    alt: 'Cupping therapy',
     full: false,
   },
   {
-    id: 'chronic',
-    sub: 'Integrative Care',
-    title: 'Chronic Disease Management',
-    desc: 'Long-term, intensive Ayurvedic protocols designed to address the root causes of chronic conditions. We work in tandem with your existing healthcare framework to provide holistic, sustaining relief and structural healing.',
-    cta: 'Consult Our Specialists',
-    img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAt6l1Wv4WeyxE6NrzLpTE4yQ2IiKZg8FxQVJT6B-8gZ55Zy-yylxb0qNLSi8FlNb8TblhUW0jhlCNEu2d-k4Rlp18tcxhluAqdYC1ZP2oJPfveZQJ9A0t_0JtpPyw84s8hT3JmsENc78vCPePYNqFRgOzMmMJV7SX2rD-z71LIGJl_0SmV8q9lbp5_TcTG8pRw58EUSugv3fXCLI_iRyiklw1rj18O4PVsJLDvgHpvS-pPLxjxu5FBRqgubJJQFv7PeLluCMEEngI',
-    alt: 'Modern Ayurvedic consultation room',
+    id: 'spine',
+    sub: 'Structural Integrity',
+    title: 'Spine Setting & Alignment',
+    desc: 'Ancestral bone alignment techniques to correct spinal degenerative conditions and disc problems.',
+    cta: 'Learn More',
+    img: 'https://images.unsplash.com/photo-1537633552985-df8429e8048b?auto=format&fit=crop&q=80',
+    alt: 'Spine alignment',
     full: true,
   },
 ];
 
 export default function TreatmentsPage() {
   return (
-    <main className="light-gradient-mesh relative" style={{ paddingTop: '7.5rem', paddingBottom: 'var(--spacing-section-gap)' }}>
+    <main className="light-gradient-mesh relative" style={{ paddingTop: '12rem', paddingBottom: 'var(--spacing-section-gap)' }}>
       {/* Floating Ambient Light */}
       <div className="absolute top-0 left-0 w-full h-[50vh] bg-gradient-to-b from-white/60 to-transparent pointer-events-none z-0" />
       
@@ -93,7 +93,7 @@ export default function TreatmentsPage() {
           width: '100%',
           padding: '10rem 5%',
           background: '#1C1C1C',
-          marginTop: '-4rem',
+          marginTop: '4rem',
           borderTopLeftRadius: '3rem',
           borderTopRightRadius: '3rem',
           borderTop: '1px solid rgba(200,146,42,0.15)',
@@ -170,6 +170,72 @@ export default function TreatmentsPage() {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ADDITIONAL THERAPIES & PROBLEMS */}
+      <section
+        className="relative z-20"
+        style={{
+          width: '100%',
+          padding: '8rem 5% 10rem',
+          background: '#F5EFE0',
+          borderTop: '1px solid rgba(27,58,45,0.1)',
+        }}
+      >
+        <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 lg:gap-32">
+            {/* Traditional Therapies List */}
+            <div>
+              <span className="font-label-caps" style={{ color: 'var(--color-secondary)', display: 'block', marginBottom: '1.5rem' }}>Full Spectrum</span>
+              <h2 className="font-display-hero text-4xl mb-12" style={{ color: 'var(--color-primary)' }}>
+                Traditional <span className="italic" style={{ color: 'var(--color-secondary)' }}>Therapies.</span>
+              </h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8">
+                {[
+                  'Acupressure', 'Physiotherapy', 'Magnetic Therapy', 'Seed Therapy',
+                  'Colour Therapy', 'Healing', 'Sujok', 'Bone Alignment'
+                ].map((item) => (
+                  <div key={item} className="flex items-center gap-4">
+                    <span className="material-icons" style={{ color: 'var(--color-secondary)', fontSize: '18px' }}>check_circle_outline</span>
+                    <span className="font-body-md" style={{ color: 'var(--color-primary)', opacity: 0.8 }}>{item}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Treatment for Problems List */}
+            <div>
+              <span className="font-label-caps" style={{ color: 'var(--color-secondary)', display: 'block', marginBottom: '1.5rem' }}>Specialized Care</span>
+              <h2 className="font-display-hero text-4xl mb-12" style={{ color: 'var(--color-primary)' }}>
+                Problems <span className="italic" style={{ color: 'var(--color-secondary)' }}>Treated.</span>
+              </h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6">
+                {[
+                  'Total Spine & Degenerative Disc', 'L4-L5 Disc Problems', 'Cervical Spondylosis',
+                  'Frozen Shoulder & Arthritis', 'Chronic Knee & Ankle Pains', 'Foot Burning & Diabetic Wounds',
+                  'PCOD & Irregular Menses', 'Gynic Problems (DUB)', 'Mens Disorders & Sexual Health',
+                  'Piles, Fistula & Bleeding Piles', 'Headache, Vertigo & Sleeplessness', 
+                  'Paralysis & Varicose Veins', 'Skin Disorders (Psoriasis, Eczema)'
+                ].map((item) => (
+                  <div key={item} className="flex items-start gap-4">
+                    <span className="material-icons" style={{ color: 'var(--color-secondary)', fontSize: '18px', marginTop: '2px' }}>spa</span>
+                    <span className="font-body-md" style={{ color: 'var(--color-primary)', opacity: 0.8, lineHeight: 1.4 }}>{item}</span>
+                  </div>
+                ))}
+              </div>
+              <div className="mt-12">
+                <Link
+                  href="/consultation"
+                  className="font-label-caps inline-flex items-center gap-4 no-underline group"
+                  style={{ color: 'var(--color-secondary)' }}
+                >
+                  <span className="pb-1 border-b border-transparent group-hover:border-current transition-all">View Full Problem Index</span>
+                  <span className="material-icons" style={{ fontSize: '18px' }}>east</span>
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </section>

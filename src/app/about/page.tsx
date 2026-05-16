@@ -14,8 +14,8 @@ export default function AboutPage() {
       <div className="orb orb-2" style={{ bottom: '10%', right: '-10%', width: '50vw', height: '50vw', opacity: 0.2, filter: 'blur(120px)' }}></div>
 
       <div className="flex-grow relative z-10">
-        <section className="w-full pt-40 pb-32 px-[5%]">
-          <div className="max-w-[1400px] mx-auto flex flex-col lg:flex-row gap-16 items-center">
+        <section className="w-full" style={{ paddingTop: '14rem', paddingBottom: '8rem', paddingLeft: '5%', paddingRight: '5%' }}>
+          <div className="max-w-[1400px] mx-auto flex flex-col lg:flex-row gap-16 lg:gap-24 items-center">
             
             <div className="flex-1">
               <span className="font-label-caps text-gradient block mb-6" style={{ letterSpacing: '0.3em' }}>Our Lineage</span>
@@ -26,13 +26,16 @@ export default function AboutPage() {
                 Rooted in the lineage of the great Sushrutha, our practitioners combine ancient diagnostic techniques with profound understanding of nature cure. We are dedicated to restoring your biological equilibrium through rigorous, personalized treatments.
               </p>
               
-              <div className="glass-panel p-8 rounded-3xl inline-block backdrop-blur-3xl border border-white/40 shadow-[0_20px_40px_rgba(0,0,0,0.05)]">
-                <div className="flex items-center gap-8">
+              <div 
+                className="glass-panel inline-block backdrop-blur-3xl border border-white/40 shadow-[0_20px_40px_rgba(0,0,0,0.05)]"
+                style={{ padding: '2.5rem 3rem', borderRadius: '2rem' }}
+              >
+                <div className="flex items-center" style={{ gap: '2.5rem' }}>
                   <div>
                     <h3 className="font-headline-md text-brand-primary mb-2" style={{ color: 'var(--color-primary)' }}>100%</h3>
                     <p className="font-label-caps" style={{ color: 'var(--color-secondary)' }}>Natural Ingredients</p>
                   </div>
-                  <div className="w-[1px] h-12 bg-black/10"></div>
+                  <div className="w-[1px] bg-black/10" style={{ height: '3.5rem' }}></div>
                   <div>
                     <h3 className="font-headline-md text-brand-primary mb-2" style={{ color: 'var(--color-primary)' }}>Authentic</h3>
                     <p className="font-label-caps" style={{ color: 'var(--color-secondary)' }}>Kerala Ayurveda</p>

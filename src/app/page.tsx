@@ -17,7 +17,7 @@ export default function HomePage() {
       <HeroSection />
 
       {/* ── 2. THE LEGACY ──────────────────── */}
-      <section className="bg-brand-cream section-gap relative z-10" style={{ marginTop: '-4rem', paddingTop: '8rem', borderTopLeftRadius: '3rem', borderTopRightRadius: '3rem', borderTop: '1px solid rgba(200,146,42,0.3)', boxShadow: '0 -20px 60px rgba(0,0,0,0.5)' }}>
+      <section className="bg-brand-cream section-gap relative z-10" style={{ marginTop: '4rem', paddingTop: '6rem', borderTopLeftRadius: '3rem', borderTopRightRadius: '3rem', borderTop: '1px solid rgba(200,146,42,0.3)', boxShadow: '0 -20px 60px rgba(0,0,0,0.5)' }}>
         {/* Bridge Ornament: Hero -> Legacy */}
         <div style={{ position: 'absolute', top: '-24px', left: '50%', transform: 'translateX(-50%)', width: '48px', height: '48px', background: '#F5EFE0', borderRadius: '50%', border: '1px solid rgba(200,146,42,0.4)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 10, boxShadow: '0 4px 20px rgba(0,0,0,0.2)' }}>
            <span className="material-icons" style={{ color: '#C8922A', fontSize: '1.2rem' }}>auto_awesome</span>
@@ -78,7 +78,7 @@ export default function HomePage() {
       </section>
 
       {/* ── 3. RITUALS GRID ─────────────────── */}
-      <section className="text-brand-cream section-gap relative z-20" style={{ background: '#1C1C1C', marginTop: '-4rem', paddingTop: '8rem', borderTopLeftRadius: '3rem', borderTopRightRadius: '3rem', borderTop: '1px solid rgba(200,146,42,0.15)', boxShadow: '0 -20px 60px rgba(0,0,0,0.1)' }}>
+      <section className="text-brand-cream section-gap relative z-20" style={{ background: '#1C1C1C', marginTop: '4rem', paddingTop: '6rem', borderTopLeftRadius: '3rem', borderTopRightRadius: '3rem', borderTop: '1px solid rgba(200,146,42,0.15)', boxShadow: '0 -20px 60px rgba(0,0,0,0.1)' }}>
         {/* Bridge Ornament: Legacy -> Treatments */}
         <div style={{ position: 'absolute', top: '-24px', left: '50%', transform: 'translateX(-50%)', width: '48px', height: '48px', background: '#1C1C1C', borderRadius: '50%', border: '1px solid rgba(200,146,42,0.4)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 10, boxShadow: '0 4px 20px rgba(0,0,0,0.4)' }}>
            <span className="material-icons" style={{ color: '#C8922A', fontSize: '1.2rem' }}>water_drop</span>
@@ -103,7 +103,7 @@ export default function HomePage() {
       </section>
 
       {/* ── 4. CALL TO ACTION ────────────────── */}
-      <section className="relative overflow-hidden z-30" style={{ padding: '10rem 0', background: '#1B3A2D', marginTop: '-4rem', borderTopLeftRadius: '3rem', borderTopRightRadius: '3rem', borderTop: '1px solid rgba(200,146,42,0.2)', boxShadow: '0 -20px 60px rgba(0,0,0,0.4)' }}>
+      <section className="relative overflow-hidden z-30" style={{ padding: '10rem 0', background: '#1B3A2D', marginTop: '4rem', borderTopLeftRadius: '3rem', borderTopRightRadius: '3rem', borderTop: '1px solid rgba(200,146,42,0.2)', boxShadow: '0 -20px 60px rgba(0,0,0,0.4)' }}>
         {/* Bridge Ornament: Treatments -> CTA */}
         <div style={{ position: 'absolute', top: '-24px', left: '50%', transform: 'translateX(-50%)', width: '48px', height: '48px', background: '#1B3A2D', borderRadius: '50%', border: '1px solid rgba(200,146,42,0.4)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 10, boxShadow: '0 4px 20px rgba(0,0,0,0.5)' }}>
            <span className="material-icons" style={{ color: '#C8922A', fontSize: '1.2rem' }}>self_improvement</span>

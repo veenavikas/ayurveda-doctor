@@ -40,6 +40,7 @@ export default function RootLayout({
           href="https://fonts.googleapis.com/icon?family=Material+Icons" 
           rel="stylesheet"
         />
+        <link rel="icon" href="/assets/susrutha_logo.png" type="image/png" />
       </head>
       <body>
         <div className="texture-overlay" aria-hidden="true" />

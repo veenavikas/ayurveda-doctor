@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function PhilosophyPage() {
   return (
-    <main style={{ paddingTop: '8rem' }}>
+    <main style={{ paddingTop: '12rem' }}>
       {/* ── Hero ─────────────────────────────── */}
       <section
         style={{
@@ -67,7 +67,7 @@ export default function PhilosophyPage() {
           position: 'relative',
           zIndex: 20,
           background: '#F5EFE0',
-          marginTop: '-4rem',
+          marginTop: '4rem',
           borderTopLeftRadius: '3rem',
           borderTopRightRadius: '3rem',
           borderTop: '1px solid rgba(200,146,42,0.3)',
@@ -152,7 +152,7 @@ export default function PhilosophyPage() {
           padding: '10rem 5%',
           position: 'relative',
           zIndex: 30,
-          marginTop: '-4rem',
+          marginTop: '4rem',
           borderTopLeftRadius: '3rem',
           borderTopRightRadius: '3rem',
           borderTop: '1px solid rgba(200,146,42,0.2)',

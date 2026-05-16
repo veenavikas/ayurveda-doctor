@@ -4,28 +4,28 @@ import React, { useState } from 'react';
 
 const offerings = [
   { 
-    title: 'Panchakarma', 
-    sub: 'Biological Reset', 
-    iconName: 'spa',
-    desc: 'Five-fold purification that removes deep-seated toxins at the cellular level.'
+    title: 'Acupuncture', 
+    sub: 'Traditional Therapy', 
+    iconName: 'colorize',
+    desc: 'Ancient needle therapy to stimulate specific points and restore energy flow.'
   },
   { 
-    title: 'Nadi Pariksha', 
-    sub: 'Pulse Wisdom', 
+    title: 'Reflexology', 
+    sub: 'Pressure Wisdom', 
     iconName: 'fingerprint',
-    desc: 'Ancient pulse reading that maps your dosha imbalance with extraordinary precision.'
+    desc: 'Targeted pressure on reflex points of the feet to heal internal organs.'
   },
   { 
-    title: 'Rasayana', 
-    sub: 'Cellular Rejuvenation', 
-    iconName: 'energy_savings_leaf',
-    desc: 'Rare herbal formulations that rebuild ojas — your vital life force and immunity.'
+    title: 'Moxa Therapy', 
+    sub: 'Thermal Healing', 
+    iconName: 'local_fire_department',
+    desc: 'Heat therapy using aged mugwort to strengthen blood and stimulate qi.'
   },
   { 
-    title: 'Marma Therapy', 
-    sub: 'Vital Energy', 
-    iconName: 'self_improvement',
-    desc: "Activation of 107 vital energy points to restore the body's pranic flow."
+    title: 'Spine Setting', 
+    sub: 'Alignment Wisdom', 
+    iconName: 'accessibility_new',
+    desc: "Classical bone alignment techniques to restore structural equilibrium."
   },
 ];
 

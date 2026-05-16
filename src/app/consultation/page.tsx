@@ -31,10 +31,12 @@ export default function ConsultationPage() {
 
   return (
     <main
-      className="gradient-mesh relative min-h-screen flex items-center justify-center py-40 px-[5%] overflow-hidden"
+      className="gradient-mesh relative min-h-screen overflow-hidden flex flex-col"
+      style={{ paddingTop: '14rem', paddingBottom: '10rem', paddingLeft: '5%', paddingRight: '5%' }}
     >
       {/* Interactive Glow */}
-      <div ref={glowRef} className="interactive-glow" style={{ top: 0, left: 0, width: '800px', height: '800px', background: 'radial-gradient(circle, rgba(254,194,86,0.1) 0%, transparent 60%)' }} />
+      <div ref={glowRef} className="interactive-glow" style={{ top: 0, left: 0, width: '800px', height: '800px', background: 'radial-gradient(circle, rgba(254,194,86,0.15) 0%, transparent 60%)' }} />
+      <div className="absolute top-0 left-0 w-full h-[600px] bg-gradient-to-b from-[#F5EFE0]/20 to-transparent pointer-events-none z-0" />
 
       {/* Floating Orbs */}
       <div className="orb orb-1" style={{ background: 'radial-gradient(circle, rgba(254,194,86,0.2), transparent 70%)' }}></div>
@@ -44,7 +46,7 @@ export default function ConsultationPage() {
       <div className="absolute inset-0 bg-black/10 mix-blend-overlay z-0 pointer-events-none"></div>
 
       <div
-        className="container-max grid grid-cols-1 lg:grid-cols-2 gap-16 relative z-10 w-full max-w-[1200px]"
+        className="container-max grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 relative z-10 w-full max-w-[1200px] mx-auto flex-1 items-center"
       >
         {/* Left: Context */}
         <div className="flex flex-col gap-12">
@@ -92,119 +94,120 @@ export default function ConsultationPage() {
             </div>
           ) : (
             <div
-              className="glass-card backdrop-blur-3xl p-10 lg:p-14 rounded-[2rem] border border-white/20 shadow-[0_20px_60px_rgba(0,0,0,0.2)] bg-white/10"
+              className="relative overflow-hidden"
+              style={{
+                background: 'linear-gradient(145deg, rgba(20, 45, 35, 0.9), rgba(4, 36, 25, 0.95))',
+                border: '1px solid rgba(200, 146, 42, 0.2)',
+                boxShadow: '0 30px 60px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.1)',
+                borderRadius: '2.5rem',
+                padding: '4rem 4rem 4.5rem 4rem'
+              }}
             >
-              <form onSubmit={handleSubmit} className="flex flex-col gap-10">
+              <form onSubmit={handleSubmit} className="flex flex-col" style={{ gap: '2rem' }}>
+                
                 {/* Full Name */}
-                <div className="relative group">
+                <div className="flex flex-col gap-3">
+                  <label htmlFor="fullName" className="font-label-caps text-[0.65rem] tracking-[0.2em]" style={{ color: 'var(--color-secondary)' }}>
+                    Full Name
+                  </label>
                   <input
                     id="fullName"
                     name="fullName"
                     type="text"
                     required
-                    placeholder=" "
-                    className="w-full bg-transparent border-b border-white/30 py-3 text-white text-lg focus:outline-none focus:border-white transition-colors peer"
+                    placeholder="E.g. Isabella Swan"
+                    className="w-full text-lg focus:outline-none focus:bg-white/10 transition-all placeholder:text-white/20"
+                    style={{ padding: '1.25rem 1.5rem', backgroundColor: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '1rem', color: '#fff' }}
                   />
-                  <label
-                    htmlFor="fullName"
-                    className="font-label-caps absolute left-0 top-3 text-white/60 transition-all peer-focus:-top-4 peer-focus:text-xs peer-focus:text-white peer-[:not(:placeholder-shown)]:-top-4 peer-[:not(:placeholder-shown)]:text-xs peer-[:not(:placeholder-shown)]:text-white"
-                  >
-                    Full Name
-                  </label>
                 </div>
 
-                {/* Email */}
-                <div className="relative group">
-                  <input
-                    id="email"
-                    name="email"
-                    type="email"
-                    required
-                    placeholder=" "
-                    className="w-full bg-transparent border-b border-white/30 py-3 text-white text-lg focus:outline-none focus:border-white transition-colors peer"
-                  />
-                  <label
-                    htmlFor="email"
-                    className="font-label-caps absolute left-0 top-3 text-white/60 transition-all peer-focus:-top-4 peer-focus:text-xs peer-focus:text-white peer-[:not(:placeholder-shown)]:-top-4 peer-[:not(:placeholder-shown)]:text-xs peer-[:not(:placeholder-shown)]:text-white"
-                  >
-                    Email Address
-                  </label>
+                {/* Email & Phone Grid */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  <div className="flex flex-col gap-3">
+                    <label htmlFor="email" className="font-label-caps text-[0.65rem] tracking-[0.2em]" style={{ color: 'var(--color-secondary)' }}>
+                      Email Address
+                    </label>
+                    <input
+                      id="email"
+                      name="email"
+                      type="email"
+                      required
+                      placeholder="hello@example.com"
+                      className="w-full text-lg focus:outline-none focus:bg-white/10 transition-all placeholder:text-white/20"
+                      style={{ padding: '1.25rem 1.5rem', backgroundColor: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '1rem', color: '#fff' }}
+                    />
+                  </div>
+
+                  <div className="flex flex-col gap-3">
+                    <label htmlFor="phone" className="font-label-caps text-[0.65rem] tracking-[0.2em]" style={{ color: 'var(--color-secondary)' }}>
+                      Phone Number
+                    </label>
+                    <input
+                      id="phone"
+                      name="phone"
+                      type="tel"
+                      placeholder="+1 (555) 000-0000"
+                      className="w-full text-lg focus:outline-none focus:bg-white/10 transition-all placeholder:text-white/20"
+                      style={{ padding: '1.25rem 1.5rem', backgroundColor: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '1rem', color: '#fff' }}
+                    />
+                  </div>
                 </div>
 
-                {/* Phone */}
-                <div className="relative group">
-                  <input
-                    id="phone"
-                    name="phone"
-                    type="tel"
-                    placeholder=" "
-                    className="w-full bg-transparent border-b border-white/30 py-3 text-white text-lg focus:outline-none focus:border-white transition-colors peer"
-                  />
-                  <label
-                    htmlFor="phone"
-                    className="font-label-caps absolute left-0 top-3 text-white/60 transition-all peer-focus:-top-4 peer-focus:text-xs peer-focus:text-white peer-[:not(:placeholder-shown)]:-top-4 peer-[:not(:placeholder-shown)]:text-xs peer-[:not(:placeholder-shown)]:text-white"
-                  >
-                    Phone Number (Optional)
-                  </label>
-                </div>
-
-                {/* Treatment */}
-                <div className="relative">
-                  <label
-                    htmlFor="treatment"
-                    className="font-label-caps text-white/60 block mb-3 text-xs"
-                  >
+                {/* Treatment Focus */}
+                <div className="flex flex-col gap-3 relative">
+                  <label htmlFor="treatment" className="font-label-caps text-[0.65rem] tracking-[0.2em]" style={{ color: 'var(--color-secondary)' }}>
                     Preferred Focus
                   </label>
-                  <select
-                    id="treatment"
-                    name="treatment"
-                    className="w-full bg-transparent border-b border-white/30 py-3 text-white text-lg focus:outline-none focus:border-white transition-colors appearance-none cursor-pointer"
-                  >
-                    <option value="" disabled className="text-black">Select an area of focus</option>
-                    <option value="dosha" className="text-black">Dosha Balancing Assessment</option>
-                    <option value="panchakarma" className="text-black">Panchakarma Consultation</option>
-                    <option value="skin" className="text-black">Radiance &amp; Skin Rituals</option>
-                    <option value="womens" className="text-black">Women&apos;s Wellness</option>
-                    <option value="chronic" className="text-black">Chronic Disease Management</option>
-                    <option value="general" className="text-black">General Wellness Inquiry</option>
-                  </select>
-                  <span
-                    className="material-symbols-outlined absolute right-0 bottom-4 text-white/60 pointer-events-none"
-                  >
-                    expand_more
-                  </span>
+                  <div className="relative">
+                    <select
+                      id="treatment"
+                      name="treatment"
+                      className="w-full text-lg focus:outline-none focus:bg-white/10 transition-all appearance-none cursor-pointer"
+                      style={{ padding: '1.25rem 1.5rem', backgroundColor: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '1rem', color: '#fff' }}
+                      defaultValue=""
+                    >
+                      <option value="" disabled className="bg-[#042419] text-white/50">Select an area of focus</option>
+                      <option value="dosha" className="bg-[#042419] text-white">Dosha Balancing Assessment</option>
+                      <option value="panchakarma" className="bg-[#042419] text-white">Panchakarma Consultation</option>
+                      <option value="skin" className="bg-[#042419] text-white">Radiance &amp; Skin Rituals</option>
+                      <option value="womens" className="bg-[#042419] text-white">Women&apos;s Wellness</option>
+                      <option value="chronic" className="bg-[#042419] text-white">Chronic Disease Management</option>
+                      <option value="general" className="bg-[#042419] text-white">General Wellness Inquiry</option>
+                    </select>
+                    <span className="material-symbols-outlined absolute right-6 top-1/2 -translate-y-1/2 text-white/40 pointer-events-none">
+                      expand_more
+                    </span>
+                  </div>
                 </div>
 
                 {/* Concern */}
-                <div className="relative">
+                <div className="flex flex-col gap-3">
+                  <label htmlFor="concern" className="font-label-caps text-[0.65rem] tracking-[0.2em]" style={{ color: 'var(--color-secondary)' }}>
+                    Primary Concern
+                  </label>
                   <textarea
                     id="concern"
                     name="concern"
-                    rows={3}
-                    placeholder=" "
-                    className="w-full bg-transparent border-b border-white/30 py-3 text-white text-lg focus:outline-none focus:border-white transition-colors resize-none peer"
+                    rows={4}
+                    placeholder="Please briefly describe what brings you to us..."
+                    className="w-full text-lg focus:outline-none focus:bg-white/10 transition-all resize-none placeholder:text-white/20"
+                    style={{ padding: '1.5rem', backgroundColor: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '1rem', color: '#fff' }}
                   />
-                  <label
-                    htmlFor="concern"
-                    className="font-label-caps absolute left-0 top-3 text-white/60 transition-all peer-focus:-top-4 peer-focus:text-xs peer-focus:text-white peer-[:not(:placeholder-shown)]:-top-4 peer-[:not(:placeholder-shown)]:text-xs peer-[:not(:placeholder-shown)]:text-white"
-                  >
-                    Primary Concern
-                  </label>
                 </div>
 
                 {/* Submit */}
-                <div className="pt-6">
+                <div className="pt-8">
                   <button
                     type="submit"
-                    className="font-label-caps btn-shimmer w-full bg-white text-[#042419] py-5 px-8 rounded-full flex items-center justify-center gap-4 shadow-[0_0_30px_rgba(255,255,255,0.2)] hover:shadow-[0_0_50px_rgba(255,255,255,0.4)] transition-all duration-500 hover:scale-[1.02]"
-                    style={{ letterSpacing: '0.15em' }}
+                    className="group relative w-full overflow-hidden rounded-full font-label-caps text-[0.8rem] tracking-[0.2em] flex items-center justify-center gap-4 transition-all duration-500 hover:scale-[1.02]"
+                    style={{ background: 'var(--color-secondary)', color: 'var(--color-primary)', padding: '1.5rem' }}
                   >
-                    <span>Begin Your Healing Journey</span>
-                    <span className="material-symbols-outlined text-xl">arrow_right_alt</span>
+                    <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-20 transition-opacity duration-500" />
+                    <span className="relative z-10">Request Consultation</span>
+                    <span className="material-symbols-outlined relative z-10 text-xl transition-transform duration-500 group-hover:translate-x-2">east</span>
                   </button>
-                  <p className="font-label-caps text-center text-white/40 mt-6 text-[0.65rem] tracking-widest">
-                    Your information is held in strictest confidence
+                  <p className="font-label-caps text-center text-white/40 mt-6 text-[0.55rem] tracking-[0.2em]">
+                    YOUR INFORMATION IS SECURE &amp; CONFIDENTIAL
                   </p>
                 </div>
               </form>

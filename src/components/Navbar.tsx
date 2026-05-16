@@ -23,7 +23,8 @@ export default function Navbar() {
   }, []);
 
   const isHome = pathname === '/';
-  const baseTextColor = scrolled ? '#ffffff' : (isHome ? '#ffffff' : '#1B3A2D');
+  const isDarkPage = pathname === '/' || pathname === '/consultation';
+  const baseTextColor = scrolled ? '#ffffff' : (isDarkPage ? '#ffffff' : '#1B3A2D');
 
   return (
     <>
@@ -37,9 +38,10 @@ export default function Navbar() {
           background: scrolled ? 'rgba(27,58,45,0.92)' : 'transparent',
           backdropFilter: scrolled ? 'blur(16px)' : 'none',
           WebkitBackdropFilter: scrolled ? 'blur(16px)' : 'none',
-          padding: scrolled ? '16px 0' : '28px 0',
-          borderBottom: scrolled ? '0.5px solid rgba(200,146,42,0.2)' : 'none',
-          transition: 'all 0.4s ease',
+          padding: scrolled ? '12px 0' : '24px 0',
+          borderBottom: scrolled ? '0.5px solid rgba(200,146,42,0.15)' : 'none',
+          boxShadow: scrolled ? '0 10px 30px rgba(0,0,0,0.15)' : 'none',
+          transition: 'all 0.5s cubic-bezier(0.16, 1, 0.3, 1)',
         }}
       >
         <div
@@ -53,31 +55,18 @@ export default function Navbar() {
           }}
         >
           {/* LEFT: Logo mark */}
-          <Link href="/" style={{ textDecoration: 'none', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-            <span
-              style={{
-                fontFamily: "'Cormorant Garamond', serif",
-                fontWeight: 300,
-                letterSpacing: '0.2em',
-                color: '#C8922A',
-                fontSize: '24px',
+          <Link href="/" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center' }}>
+            <img 
+              src="/assets/susrutha_logo.png" 
+              alt="Sushrutha Nature Cure Logo" 
+              style={{ 
+                height: scrolled ? '35px' : '50px', 
+                width: 'auto', 
+                transition: 'all 0.5s cubic-bezier(0.16, 1, 0.3, 1)',
+                filter: baseTextColor === '#ffffff' ? 'brightness(0) invert(1)' : 'none' 
               }}
-            >
-              AYURVEDA
-            </span>
-            <span
-              style={{
-                fontFamily: "'DM Sans', sans-serif",
-                fontSize: '9px',
-                letterSpacing: '0.3em',
-                opacity: 0.5,
-                color: '#C8922A',
-                marginTop: '4px',
-                textTransform: 'uppercase'
-              }}
-            >
-              The Sanctuary
-            </span>
+              className="hover:scale-105 active:scale-95 transition-transform"
+            />
           </Link>
 
           {/* CENTER: Nav links */}
