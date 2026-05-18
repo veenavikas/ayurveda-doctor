@@ -2,6 +2,29 @@ import Footer from '@/components/Footer';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import React from 'react';
+import type { Metadata } from 'next';
+
+// Dynamic SEO Metadata
+export async function generateMetadata({ params }: { params: Params }): Promise<Metadata> {
+  const { id } = await params;
+  const data = TREATMENT_DETAILS[id];
+  if (!data) return {};
+  return {
+    title: `${data.title} | Sushrutha Nature Cure`,
+    description: `${data.sub}. Discover the holistic clinical workflow, primary indications, and diagnostic processes guided by Dr. Mohan Rao.`,
+  };
+}
+
+// Static Route Parameter Pre-rendering
+export async function generateStaticParams() {
+  return [
+    { id: 'acupuncture' },
+    { id: 'reflexology' },
+    { id: 'moxa' },
+    { id: 'cupping' },
+    { id: 'spine' },
+  ];
+}
 
 // Treatment Database
 const TREATMENT_DETAILS: Record<string, {
