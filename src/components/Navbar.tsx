@@ -17,60 +17,81 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 80);
+    const handleScroll = () => setScrolled(window.scrollY > 40);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const isHome = pathname === '/';
-  const isDarkPage = pathname === '/' || pathname === '/consultation';
-  const baseTextColor = scrolled ? '#ffffff' : (isDarkPage ? '#ffffff' : '#1B3A2D');
-
   return (
     <>
-      <nav
+      <header
         style={{
           position: 'fixed',
-          top: 0,
-          left: 0,
-          width: '100%',
+          top: '24px',
+          left: '50%',
+          transform: 'translateX(-50%)',
+          width: 'calc(100% - 32px)',
+          maxWidth: '1000px',
           zIndex: 100,
-          background: scrolled ? 'rgba(27,58,45,0.92)' : 'transparent',
-          backdropFilter: scrolled ? 'blur(16px)' : 'none',
-          WebkitBackdropFilter: scrolled ? 'blur(16px)' : 'none',
-          padding: scrolled ? '12px 0' : '24px 0',
-          borderBottom: scrolled ? '0.5px solid rgba(200,146,42,0.15)' : 'none',
-          boxShadow: scrolled ? '0 10px 30px rgba(0,0,0,0.15)' : 'none',
+          background: scrolled ? 'rgba(246, 244, 239, 0.85)' : 'rgba(246, 244, 239, 0.70)',
+          backdropFilter: 'blur(20px)',
+          WebkitBackdropFilter: 'blur(20px)',
+          borderRadius: '100px',
+          padding: '12px 24px',
+          border: scrolled ? '1.5px solid rgba(34, 22, 18, 0.12)' : '1px solid rgba(34, 22, 18, 0.06)',
+          boxShadow: scrolled 
+            ? '0 12px 30px rgba(34, 22, 18, 0.08), 0 2px 4px rgba(34, 22, 18, 0.02)' 
+            : '0 8px 24px rgba(34, 22, 18, 0.03)',
           transition: 'all 0.5s cubic-bezier(0.16, 1, 0.3, 1)',
         }}
       >
         <div
           style={{
-            maxWidth: '1400px',
-            margin: '0 auto',
-            padding: '0 5%',
             display: 'flex',
             justifyContent: 'space-between',
             alignItems: 'center',
+            width: '100%',
           }}
         >
-          {/* LEFT: Logo mark */}
-          <Link href="/" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center' }}>
+          {/* Brand Logo - Sushrutha Nature Cure Logo Image */}
+          <Link href="/" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
             <img 
               src="/assets/susrutha_logo.png" 
               alt="Sushrutha Nature Cure Logo" 
               style={{ 
                 height: scrolled ? '35px' : '50px', 
                 width: 'auto', 
-                transition: 'all 0.5s cubic-bezier(0.16, 1, 0.3, 1)',
-                filter: baseTextColor === '#ffffff' ? 'brightness(0) invert(1)' : 'none' 
-              }}
-              className="hover:scale-105 active:scale-95 transition-transform"
+                transition: 'height 0.3s ease' 
+              }} 
             />
+            <div style={{ display: 'flex', flexDirection: 'column', lineHeight: 1.1, gap: '1px' }} className="hidden sm:flex">
+              <span style={{
+                fontFamily: 'var(--font-garamond)',
+                fontSize: scrolled ? '0.9rem' : '1.05rem',
+                fontWeight: 700,
+                letterSpacing: '0.15em',
+                color: 'var(--color-primary)',
+                textTransform: 'uppercase',
+                transition: 'all 0.3s ease',
+              }}>
+                Sushrutha
+              </span>
+              <span style={{
+                fontFamily: 'var(--font-sans)',
+                fontSize: scrolled ? '0.55rem' : '0.62rem',
+                fontWeight: 700,
+                color: 'var(--color-secondary)',
+                textTransform: 'uppercase',
+                letterSpacing: '0.22em',
+                transition: 'all 0.3s ease',
+              }}>
+                nature cure
+              </span>
+            </div>
           </Link>
 
-          {/* CENTER: Nav links */}
-          <div className="hidden md:flex items-center gap-10">
+          {/* Desktop Navigation Links */}
+          <div className="hidden md:flex items-center gap-8">
             {NAV_LINKS.map(({ href, label }) => {
               const active = pathname === href;
               return (
@@ -78,107 +99,116 @@ export default function Navbar() {
                   key={href}
                   href={href}
                   style={{
-                    fontFamily: "'DM Sans', sans-serif",
-                    fontSize: '11px',
-                    letterSpacing: '0.15em',
-                    textTransform: 'uppercase',
-                    opacity: active ? 1 : 0.65,
-                    color: active ? '#C8922A' : baseTextColor,
+                    fontFamily: 'var(--font-sans)',
+                    fontSize: '13px',
+                    fontWeight: 500,
+                    color: active ? 'var(--color-primary)' : 'var(--color-on-surface-variant)',
                     textDecoration: 'none',
-                    transition: 'all 0.4s ease',
+                    transition: 'all 0.3s ease',
+                    position: 'relative',
+                    padding: '4px 0',
                   }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.opacity = '1';
-                    e.currentTarget.style.color = '#C8922A';
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.opacity = active ? '1' : '0.65';
-                    e.currentTarget.style.color = active ? '#C8922A' : baseTextColor;
-                  }}
+                  className="hover:text-primary"
                 >
                   {label}
+                  {active && (
+                    <span 
+                      style={{
+                        position: 'absolute',
+                        bottom: '-4px',
+                        left: '50%',
+                        transform: 'translateX(-50%)',
+                        width: '4px',
+                        height: '4px',
+                        borderRadius: '50%',
+                        backgroundColor: 'var(--color-secondary)',
+                      }}
+                    />
+                  )}
                 </Link>
               );
             })}
           </div>
 
-          {/* RIGHT: CTA Button & Phone */}
-          <div className="hidden md:flex items-center gap-8">
+          {/* Right Section: Call & Book Button */}
+          <div className="hidden md:flex items-center gap-6">
             <a
               href="tel:+918897722563"
               style={{
-                fontFamily: "'DM Sans', sans-serif",
-                fontSize: '11px',
-                letterSpacing: '0.1em',
-                color: baseTextColor,
+                fontFamily: 'var(--font-sans)',
+                fontSize: '13px',
+                fontWeight: 500,
+                color: 'var(--color-on-surface-variant)',
                 textDecoration: 'none',
                 display: 'flex',
                 alignItems: 'center',
-                gap: '8px',
-                transition: 'opacity 0.3s ease',
+                gap: '6px',
+                transition: 'color 0.3s ease',
               }}
-              onMouseEnter={(e) => (e.currentTarget.style.opacity = '0.7')}
-              onMouseLeave={(e) => (e.currentTarget.style.opacity = '1')}
+              className="hover:text-primary"
             >
-              <span className="material-icons" style={{ fontSize: '16px', color: '#C8922A' }}>
+              <span className="material-icons" style={{ fontSize: '15px', color: 'var(--color-secondary)' }}>
                 call
               </span>
               +91 88977 22563
             </a>
+            
             <Link
               href="/consultation"
+              className="nav-book-btn"
               style={{
-                fontFamily: "'DM Sans', sans-serif",
-                fontSize: '11px',
-                textTransform: 'uppercase',
-                letterSpacing: '0.15em',
-                padding: '10px 24px',
-                border: '0.5px solid #C8922A',
-                color: '#C8922A',
-                background: 'transparent',
+                fontFamily: 'var(--font-sans)',
+                fontSize: '13px',
+                fontWeight: 600,
+                color: 'var(--color-on-primary)',
+                background: 'var(--color-primary)',
+                padding: '10px 22px',
+                borderRadius: '100px',
                 textDecoration: 'none',
-                transition: 'all 0.4s ease',
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.background = '#C8922A';
-                e.currentTarget.style.color = '#1C1C1C';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.background = 'transparent';
-                e.currentTarget.style.color = '#C8922A';
+                boxShadow: '0 4px 12px rgba(34, 22, 18, 0.15)',
+                transition: 'all 0.4s cubic-bezier(0.16, 1, 0.3, 1)',
               }}
             >
-              Book Consultation
+              Book session
             </Link>
           </div>
 
-          {/* Hamburger Icon (Mobile Only) */}
+          {/* Mobile Hamburger Button */}
           <button
-            className="md:hidden flex flex-col justify-center items-center"
-            style={{ width: '20px', height: '20px', background: 'none', border: 'none', cursor: 'pointer', gap: '4px' }}
+            className="md:hidden flex flex-col justify-center items-end"
+            style={{ 
+              width: '24px', 
+              height: '24px', 
+              background: 'none', 
+              border: 'none', 
+              cursor: 'pointer', 
+              gap: '5px',
+              padding: 0
+            }}
             onClick={() => setMobileOpen(true)}
             aria-label="Open menu"
           >
-            <span style={{ display: 'block', width: '20px', height: '2px', backgroundColor: '#C8922A' }} />
-            <span style={{ display: 'block', width: '20px', height: '2px', backgroundColor: '#C8922A' }} />
-            <span style={{ display: 'block', width: '20px', height: '2px', backgroundColor: '#C8922A' }} />
+            <span style={{ display: 'block', width: '20px', height: '2px', backgroundColor: 'var(--color-primary)', borderRadius: '1px' }} />
+            <span style={{ display: 'block', width: '15px', height: '2px', backgroundColor: 'var(--color-primary)', borderRadius: '1px' }} />
+            <span style={{ display: 'block', width: '20px', height: '2px', backgroundColor: 'var(--color-primary)', borderRadius: '1px' }} />
           </button>
         </div>
-      </nav>
+      </header>
 
-      {/* MOBILE OVERLAY */}
+      {/* Mobile Menu Overlay */}
       {mobileOpen && (
         <div
           style={{
             position: 'fixed',
             inset: 0,
             zIndex: 200,
-            background: '#1B3A2D',
+            background: 'var(--color-primary)',
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'center',
             alignItems: 'center',
-            gap: '2rem',
+            gap: '2.5rem',
+            padding: '2rem',
           }}
         >
           {/* Close Button */}
@@ -186,12 +216,12 @@ export default function Navbar() {
             style={{
               position: 'absolute',
               top: '28px',
-              right: '5%',
+              right: '24px',
               background: 'none',
               border: 'none',
               cursor: 'pointer',
-              color: '#C8922A',
-              fontSize: '32px',
+              color: 'var(--color-on-primary)',
+              fontSize: '36px',
               lineHeight: 1,
             }}
             onClick={() => setMobileOpen(false)}
@@ -200,32 +230,33 @@ export default function Navbar() {
             &times;
           </button>
 
-          {/* Overlay Links */}
+          {/* Navigation Links */}
           {NAV_LINKS.map(({ href, label }) => (
             <Link
               key={href}
               href={href}
               onClick={() => setMobileOpen(false)}
+              className="nav-mobile-link"
               style={{
-                fontFamily: "'Cormorant Garamond', serif",
-                fontSize: '2rem',
-                color: '#ffffff',
+                fontFamily: 'var(--font-garamond)',
+                fontSize: '2.2rem',
+                color: 'var(--color-on-primary)',
                 textDecoration: 'none',
-                textTransform: 'uppercase',
-                letterSpacing: '0.1em',
+                letterSpacing: '0.05em',
+                transition: 'color 0.3s ease',
               }}
             >
               {label}
             </Link>
           ))}
 
-          {/* Mobile Phone Link */}
+          {/* Phone Link */}
           <a
             href="tel:+918897722563"
             style={{
-              fontFamily: "'DM Sans', sans-serif",
+              fontFamily: 'var(--font-sans)',
               fontSize: '18px',
-              color: '#C8922A',
+              color: 'var(--color-primary-fixed)',
               textDecoration: 'none',
               display: 'flex',
               alignItems: 'center',
@@ -239,27 +270,39 @@ export default function Navbar() {
             +91 88977 22563
           </a>
           
-          {/* Overlay CTA */}
+          {/* Consultation Button */}
           <Link
             href="/consultation"
             onClick={() => setMobileOpen(false)}
             style={{
-              fontFamily: "'DM Sans', sans-serif",
-              fontSize: '11px',
+              fontFamily: 'var(--font-sans)',
+              fontSize: '14px',
+              fontWeight: 600,
               textTransform: 'uppercase',
-              letterSpacing: '0.15em',
-              padding: '14px 32px',
-              border: '0.5px solid #C8922A',
-              color: '#C8922A',
-              background: 'transparent',
+              letterSpacing: '0.1em',
+              padding: '14px 36px',
+              borderRadius: '100px',
+              backgroundColor: 'var(--color-secondary-container)',
+              color: 'var(--color-on-secondary-container)',
               textDecoration: 'none',
-              marginTop: '2rem',
+              marginTop: '1rem',
+              boxShadow: '0 8px 20px rgba(0,0,0,0.2)',
             }}
           >
             Book Consultation
           </Link>
         </div>
       )}
+
+      <style>{`
+        .nav-book-btn:hover {
+          background: var(--color-secondary) !important;
+          transform: translateY(-1px) !important;
+        }
+        .nav-mobile-link:hover {
+          color: var(--color-primary-fixed) !important;
+        }
+      `}</style>
     </>
   );
 }

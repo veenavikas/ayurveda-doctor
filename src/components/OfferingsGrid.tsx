@@ -1,142 +1,132 @@
 'use client';
 
-import React, { useState } from 'react';
+import React from 'react';
 
-const offerings = [
-  { 
-    title: 'Acupuncture', 
-    sub: 'Traditional Therapy', 
-    iconName: 'colorize',
-    desc: 'Ancient needle therapy to stimulate specific points and restore energy flow.'
+const practices = [
+  {
+    title: 'Grounding touch',
+    subtitle: 'Abhyanga & Touch Therapy',
+    iconName: 'spa',
+    desc: 'Gentle, intentional contact combined with warm medicated oils to calm the nervous system, reduce stress, and bring awareness back into the body.',
   },
-  { 
-    title: 'Reflexology', 
-    sub: 'Pressure Wisdom', 
-    iconName: 'fingerprint',
-    desc: 'Targeted pressure on reflex points of the feet to heal internal organs.'
+  {
+    title: 'Breath regulation',
+    subtitle: 'Pranayama & Thermal Moxa',
+    iconName: 'air',
+    desc: 'Guided pranayama breathwork and thermal herbal stimulation to release deep-seated tension, regulate your system, and invite spaciousness from within.',
   },
-  { 
-    title: 'Moxa Therapy', 
-    sub: 'Thermal Healing', 
-    iconName: 'local_fire_department',
-    desc: 'Heat therapy using aged mugwort to strengthen blood and stimulate qi.'
-  },
-  { 
-    title: 'Spine Setting', 
-    sub: 'Alignment Wisdom', 
-    iconName: 'accessibility_new',
-    desc: "Classical bone alignment techniques to restore structural equilibrium."
+  {
+    title: 'Intuitive Alignment',
+    subtitle: 'Spine Setting & Somatic Flow',
+    iconName: 'self_improvement',
+    desc: 'Ancestral spinal corrections and unforced body movements that unwind deep holding patterns and help reconnect you with your inner biological rhythm.',
   },
 ];
 
 export default function OfferingsGrid() {
-  const [activeCard, setActiveCard] = useState<number | null>(null);
-
   return (
-    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '1rem' }}>
-      {offerings.map((offering, idx) => {
-        const isHovered = activeCard === idx;
-        
-        return (
+    <div 
+      style={{ 
+        display: 'grid', 
+        gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', 
+        gap: '2.5rem',
+        width: '100%'
+      }}
+    >
+      {practices.map((practice, idx) => (
+        <div
+          key={idx}
+          style={{
+            background: 'var(--color-surface-container)',
+            border: '1.5px solid rgba(34, 22, 18, 0.05)',
+            borderRadius: '2rem',
+            padding: '3.5rem 3rem',
+            transition: 'all 0.6s cubic-bezier(0.16, 1, 0.3, 1)',
+            cursor: 'pointer',
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '1.5rem',
+            boxShadow: '0 8px 30px rgba(34, 22, 18, 0.02)',
+          }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.transform = 'translateY(-8px)';
+            e.currentTarget.style.boxShadow = '0 20px 40px rgba(34, 22, 18, 0.06)';
+            e.currentTarget.style.borderColor = 'rgba(139, 90, 43, 0.2)';
+            const icon = e.currentTarget.querySelector('.practice-icon') as HTMLElement;
+            if (icon) icon.style.transform = 'scale(1.1)';
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.transform = 'translateY(0)';
+            e.currentTarget.style.boxShadow = '0 8px 30px rgba(34, 22, 18, 0.02)';
+            e.currentTarget.style.borderColor = 'rgba(34, 22, 18, 0.05)';
+            const icon = e.currentTarget.querySelector('.practice-icon') as HTMLElement;
+            if (icon) icon.style.transform = 'scale(1)';
+          }}
+        >
+          {/* ICON IN AN ORGANIC CIRCLE */}
           <div
-            key={idx}
-            onMouseEnter={() => setActiveCard(idx)}
-            onMouseLeave={() => setActiveCard(null)}
             style={{
-              background: isHovered ? '#1B3A2D' : 'rgba(255,255,255,0.03)',
-              border: '0.5px solid',
-              borderColor: isHovered ? 'rgba(200,146,42,0.5)' : 'rgba(200,146,42,0.15)',
-              borderRadius: '2px',
-              padding: '2.5rem 2rem',
-              transition: 'all 0.5s cubic-bezier(0.23, 1, 0.32, 1)',
-              cursor: 'pointer',
-              overflow: 'hidden',
-              position: 'relative',
-              transform: isHovered ? 'translateY(-6px)' : 'none',
-              boxShadow: isHovered 
-                ? '0 20px 60px rgba(0,0,0,0.4), 0 0 0 0.5px rgba(200,146,42,0.3)' 
-                : 'none',
+              width: '64px',
+              height: '64px',
+              borderRadius: '50%',
+              background: 'rgba(139, 90, 43, 0.08)',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
             }}
           >
-            {/* ICON */}
-            <span 
-              className="material-icons"
+            <span
+              className="material-icons practice-icon"
               style={{
-                fontSize: '2rem',
-                display: 'block',
-                marginBottom: '1rem',
-                color: isHovered ? '#e0c87a' : '#C8922A',
-                transform: isHovered ? 'scale(1.15)' : 'scale(1)',
-                transition: 'transform 0.4s ease, color 0.4s ease',
-                transformOrigin: 'left center'
+                fontSize: '28px',
+                color: 'var(--color-secondary)',
+                transition: 'transform 0.5s cubic-bezier(0.16, 1, 0.3, 1)',
               }}
             >
-              {offering.iconName}
+              {practice.iconName}
             </span>
+          </div>
 
-            {/* SUBTITLE */}
-            <p className="font-label-caps" style={{ color: 'var(--color-secondary-fixed)', fontSize: '0.6rem', marginBottom: '1rem' }}>
-              {offering.sub}
-            </p>
+          {/* LABEL CAP */}
+          <span
+            style={{
+              fontFamily: 'var(--font-sans)',
+              fontSize: '11px',
+              fontWeight: 700,
+              textTransform: 'uppercase',
+              letterSpacing: '0.15em',
+              color: 'var(--color-secondary)',
+            }}
+          >
+            {practice.subtitle}
+          </span>
 
-            {/* TITLE */}
-            <div style={{ position: 'relative', display: 'inline-block' }}>
-              <h3 
-                style={{ 
-                  fontFamily: 'var(--font-garamond)', 
-                  fontSize: '1.75rem', 
-                  fontWeight: 400,
-                  color: '#F5EFE0',
-                  margin: 0
-                }}
-              >
-                {offering.title}
-              </h3>
-              <div 
-                style={{
-                  position: 'absolute',
-                  bottom: '-4px',
-                  left: 0,
-                  height: '1px',
-                  background: '#C8922A',
-                  width: isHovered ? '40px' : '0px',
-                  transition: 'width 0.4s ease 0.1s'
-                }}
-              />
-            </div>
-
-            {/* DESCRIPTION REVEAL */}
+          {/* TITLE & DESCRIPTION */}
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+            <h3
+              style={{
+                fontFamily: 'var(--font-garamond)',
+                fontSize: '2rem',
+                fontWeight: 500,
+                color: 'var(--color-primary)',
+                lineHeight: 1.2,
+              }}
+            >
+              {practice.title}
+            </h3>
             <p
               style={{
-                fontSize: '0.85rem',
-                lineHeight: 1.6,
-                color: 'rgba(245, 239, 224, 0.7)',
-                fontFamily: "'DM Sans', sans-serif",
-                maxHeight: isHovered ? '60px' : '0px',
-                opacity: isHovered ? 1 : 0,
-                overflow: 'hidden',
-                marginTop: isHovered ? '1rem' : '0px',
-                transition: 'all 0.4s ease 0.15s'
+                fontFamily: 'var(--font-sans)',
+                fontSize: '15px',
+                lineHeight: 1.7,
+                color: 'var(--color-on-surface-variant)',
               }}
             >
-              {offering.desc}
+              {practice.desc}
             </p>
-
-            {/* BOTTOM GOLD LINE ACCENT */}
-            <div
-              style={{
-                position: 'absolute',
-                bottom: 0,
-                left: 0,
-                height: '1px',
-                background: 'linear-gradient(to right, #C8922A, transparent)',
-                width: isHovered ? '100%' : '0%',
-                transition: 'width 0.5s ease'
-              }}
-            />
           </div>
-        );
-      })}
+        </div>
+      ))}
     </div>
   );
 }

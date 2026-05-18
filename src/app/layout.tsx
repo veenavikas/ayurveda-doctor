@@ -5,19 +5,19 @@ import SmoothScroll from "@/components/SmoothScroll";
 import WhatsAppWidget from "@/components/WhatsAppWidget";
 
 export const metadata: Metadata = {
-  title: "AVM Nature Care | Ancestral Wisdom. Modern Equilibrium.",
+  title: "Sushrutha Nature Cure | Ancestral Wisdom. Modern Equilibrium.",
   description:
     "A sanctuary of Nature Cure rooted in ancestral wisdom.",
   keywords: ["Ayurveda", "Panchakarma", "Nadi Pariksha", "Holistic Healing", "Dosha", "Wellness"],
   openGraph: {
-    title: "AVM Nature Care | Ancestral Wisdom. Modern Equilibrium.",
+    title: "Sushrutha Nature Cure | Ancestral Wisdom. Modern Equilibrium.",
     description: "A sanctuary of Nature Cure rooted in ancestral wisdom.",
     type: "website",
     images: ["/og-image.jpg"],
   },
   twitter: {
     card: "summary_large_image",
-    title: "AVM Nature Care | Ancestral Wisdom. Modern Equilibrium.",
+    title: "Sushrutha Nature Cure | Ancestral Wisdom. Modern Equilibrium.",
     description: "A sanctuary of Nature Cure rooted in ancestral wisdom.",
   },
 };

@@ -1,28 +1,10 @@
 'use client';
 
-import { useState, useRef, useEffect } from 'react';
+import { useState } from 'react';
 import Link from 'next/link';
-import gsap from 'gsap';
 
 export default function ConsultationPage() {
   const [submitted, setSubmitted] = useState(false);
-  const glowRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      if (glowRef.current) {
-        gsap.to(glowRef.current, {
-          x: e.clientX,
-          y: e.clientY,
-          duration: 0.8,
-          ease: 'power2.out'
-        });
-      }
-    };
-
-    window.addEventListener('mousemove', handleMouseMove);
-    return () => window.removeEventListener('mousemove', handleMouseMove);
-  }, []);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -31,83 +13,192 @@ export default function ConsultationPage() {
 
   return (
     <main
-      className="gradient-mesh relative min-h-screen overflow-hidden flex flex-col"
-      style={{ paddingTop: '14rem', paddingBottom: '10rem', paddingLeft: '5%', paddingRight: '5%' }}
+      style={{
+        background: 'var(--color-background)',
+        minHeight: '100vh',
+        paddingTop: '12rem',
+        paddingBottom: '8rem',
+        paddingLeft: '5%',
+        paddingRight: '5%',
+        position: 'relative',
+        overflow: 'hidden',
+      }}
     >
-      {/* Interactive Glow */}
-      <div ref={glowRef} className="interactive-glow" style={{ top: 0, left: 0, width: '800px', height: '800px', background: 'radial-gradient(circle, rgba(254,194,86,0.15) 0%, transparent 60%)' }} />
-      <div className="absolute top-0 left-0 w-full h-[600px] bg-gradient-to-b from-[#F5EFE0]/20 to-transparent pointer-events-none z-0" />
-
-      {/* Floating Orbs */}
-      <div className="orb orb-1" style={{ background: 'radial-gradient(circle, rgba(254,194,86,0.2), transparent 70%)' }}></div>
-      <div className="orb orb-3" style={{ background: 'radial-gradient(circle, rgba(131,164,147,0.3), transparent 70%)', top: '10%', right: '10%' }}></div>
-
-      {/* Immersive overlay */}
-      <div className="absolute inset-0 bg-black/10 mix-blend-overlay z-0 pointer-events-none"></div>
+      {/* FLOATING AMBIENT ORB */}
+      <div 
+        style={{
+          position: 'absolute',
+          top: '-10%',
+          left: '-10%',
+          width: '40vw',
+          height: '40vw',
+          borderRadius: '50%',
+          background: 'radial-gradient(circle, rgba(139, 90, 43, 0.04), transparent 70%)',
+          filter: 'blur(80px)',
+          pointerEvents: 'none',
+        }}
+      />
 
       <div
-        className="container-max grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 relative z-10 w-full max-w-[1200px] mx-auto flex-1 items-center"
+        style={{
+          containerType: 'inline-size',
+          width: '100%',
+          maxWidth: '1200px',
+          margin: '0 auto',
+          display: 'grid',
+          gridTemplateColumns: '1fr 1.1fr',
+          gap: '5rem',
+          alignItems: 'center',
+          position: 'relative',
+          zIndex: 10,
+        }}
+        className="consult-grid"
       >
-        {/* Left: Context */}
-        <div className="flex flex-col gap-12">
-          <div>
-            <span className="font-label-caps text-gradient mb-6 block" style={{ letterSpacing: '0.3em' }}>Reserve</span>
-            <h1 className="font-display-hero text-white mb-6 drop-shadow-sm leading-tight">
-              Book a<br />Consultation
+        {/* Left Column: Context & Image */}
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '2.5rem' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem', alignItems: 'flex-start' }}>
+            <span
+              style={{
+                fontFamily: 'var(--font-sans)',
+                fontSize: '11px',
+                fontWeight: 700,
+                textTransform: 'uppercase',
+                letterSpacing: '0.15em',
+                color: 'var(--color-secondary)',
+                background: 'var(--color-secondary-container)',
+                padding: '6px 14px',
+                borderRadius: '100px',
+              }}
+            >
+              Reserve
+            </span>
+            <h1
+              style={{
+                fontFamily: 'var(--font-garamond)',
+                fontSize: 'clamp(2.5rem, 5vw, 4rem)',
+                fontWeight: 500,
+                color: 'var(--color-primary)',
+                lineHeight: 1.1,
+                margin: 0,
+              }}
+            >
+              Book a Consultation
             </h1>
-            <p className="font-body-lg text-white/80 max-w-[28rem] leading-relaxed">
-              Step into a space of deep restoration. Share your concerns with us, and our practitioners will curate a bespoke healing journey rooted in ancestral Ayurvedic wisdom.
+            <p
+              style={{
+                fontFamily: 'var(--font-sans)',
+                fontSize: '16px',
+                lineHeight: 1.7,
+                color: 'var(--color-on-surface-variant)',
+                maxWidth: '460px',
+                margin: 0,
+              }}
+            >
+              Step into a space of deep restoration. Share your details with us, and Dr. Mohan Rao will curate a bespoke healing journey rooted in ancestral Ayurvedic wisdom and somatic grounding.
             </p>
           </div>
-          {/* Decorative image */}
-          <div className="relative h-[24rem] overflow-hidden rounded-[2rem] shadow-[0_30px_60px_rgba(0,0,0,0.3)] group">
+
+          {/* Elegant Circular/Oval Cropped Image */}
+          <div
+            style={{
+              position: 'relative',
+              width: '100%',
+              maxWidth: '440px',
+              aspectRatio: '1.2/1',
+              borderRadius: '2rem',
+              overflow: 'hidden',
+              boxShadow: '0 15px 35px rgba(34, 22, 18, 0.05)',
+              border: '1.5px solid rgba(34, 22, 18, 0.06)',
+            }}
+          >
             <img
               src="https://lh3.googleusercontent.com/aida-public/AB6AXuCP1ShFRc-svFdR-v_eSpYvJ4FwujzIwCA71vLLW690RvGCTuzmZHVJrPEobSTmdOsIR5O5JkneEFwKZMlx616YXEEjpJbNjsd2mJtZrWZTtJPLWCE8R_iP8MQXvgVCH_ZdLQga_PFrWgc2asPBcYbF_FrfAr0lu2p9nzULWbuRS56hnC00dyYYmTCWjFdbsGcnHc2caT1Gj_SxXtbqVmmTub3P9QsRMwKj1c70iAwQuOyjnJcjxw9eh8nuRuAiWt2IJiNHVl3JB4I"
               alt="Traditional Ayurvedic apothecary elements"
-              className="w-full h-full object-cover transition-transform duration-[1.5s] ease-in-out group-hover:scale-105"
+              style={{ width: '100%', height: '100%', objectFit: 'cover' }}
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#042419]/90 via-[#042419]/30 to-transparent mix-blend-multiply opacity-80" />
-            <div className="absolute bottom-8 left-8">
-              <span className="font-label-caps text-white/80">Restoration Awaits</span>
-            </div>
           </div>
         </div>
 
-        {/* Right: Form */}
+        {/* Right Column: Clean Minimal Form */}
         <div>
           {submitted ? (
             <div
-              className="glass-card backdrop-blur-3xl p-16 rounded-[2rem] text-center border border-white/20 shadow-[0_20px_60px_rgba(0,0,0,0.2)]"
+              style={{
+                background: 'var(--color-surface-container)',
+                border: '1.5px solid rgba(34, 22, 18, 0.06)',
+                borderRadius: '2.5rem',
+                padding: '5rem 4rem',
+                textAlign: 'center',
+                boxShadow: '0 12px 40px rgba(34, 22, 18, 0.03)',
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                gap: '1.5rem',
+              }}
             >
-              <span className="material-symbols-outlined text-6xl text-brand-secondary mb-6 block" style={{ color: 'var(--color-secondary-container)' }}>check_circle</span>
-              <h2 className="font-headline-lg text-white mb-4">Your Journey Begins</h2>
-              <p className="font-body-lg text-white/70 mb-10 leading-relaxed">
-                We have received your inquiry. Our practitioners will reach out within 24 hours to confirm your appointment.
+              <span className="material-icons" style={{ fontSize: '64px', color: 'var(--color-secondary)' }}>
+                check_circle
+              </span>
+              <h2 style={{ fontFamily: 'var(--font-garamond)', fontSize: '2.25rem', fontWeight: 500, color: 'var(--color-primary)', margin: 0 }}>
+                Your Journey Begins
+              </h2>
+              <p
+                style={{
+                  fontFamily: 'var(--font-sans)',
+                  fontSize: '15px',
+                  lineHeight: 1.7,
+                  color: 'var(--color-on-surface-variant)',
+                  maxWidth: '380px',
+                  margin: '0 auto 1.5rem',
+                }}
+              >
+                We have received your request. Dr. Mohan Rao’s office will reach out within 24 hours to confirm your private session details.
               </p>
               <Link
                 href="/"
-                className="font-label-caps btn-shimmer bg-white text-[#042419] px-8 py-4 rounded-full inline-block transition-transform hover:scale-105 shadow-[0_0_40px_rgba(255,255,255,0.2)]"
-                style={{ letterSpacing: '0.15em' }}
+                style={{
+                  fontFamily: 'var(--font-sans)',
+                  fontSize: '14px',
+                  fontWeight: 600,
+                  color: 'var(--color-on-primary)',
+                  background: 'var(--color-primary)',
+                  padding: '14px 36px',
+                  borderRadius: '100px',
+                  textDecoration: 'none',
+                  boxShadow: '0 4px 15px rgba(34, 22, 18, 0.15)',
+                  transition: 'background 0.3s ease',
+                }}
+                onMouseEnter={(e) => e.currentTarget.style.background = 'var(--color-secondary)'}
+                onMouseLeave={(e) => e.currentTarget.style.background = 'var(--color-primary)'}
               >
                 Return Home
               </Link>
             </div>
           ) : (
             <div
-              className="relative overflow-hidden"
               style={{
-                background: 'linear-gradient(145deg, rgba(20, 45, 35, 0.9), rgba(4, 36, 25, 0.95))',
-                border: '1px solid rgba(200, 146, 42, 0.2)',
-                boxShadow: '0 30px 60px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.1)',
+                background: 'var(--color-surface-container)',
+                border: '1.5px solid rgba(34, 22, 18, 0.06)',
                 borderRadius: '2.5rem',
-                padding: '4rem 4rem 4.5rem 4rem'
+                padding: '4.5rem 4rem',
+                boxShadow: '0 12px 40px rgba(34, 22, 18, 0.03)',
               }}
             >
-              <form onSubmit={handleSubmit} className="flex flex-col" style={{ gap: '2rem' }}>
+              <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1.75rem' }}>
                 
                 {/* Full Name */}
-                <div className="flex flex-col gap-3">
-                  <label htmlFor="fullName" className="font-label-caps text-[0.65rem] tracking-[0.2em]" style={{ color: 'var(--color-secondary)' }}>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                  <label
+                    htmlFor="fullName"
+                    style={{
+                      fontFamily: 'var(--font-sans)',
+                      fontSize: '11px',
+                      fontWeight: 700,
+                      textTransform: 'uppercase',
+                      letterSpacing: '0.15em',
+                      color: 'var(--color-secondary)',
+                    }}
+                  >
                     Full Name
                   </label>
                   <input
@@ -116,15 +207,43 @@ export default function ConsultationPage() {
                     type="text"
                     required
                     placeholder="E.g. Isabella Swan"
-                    className="w-full text-lg focus:outline-none focus:bg-white/10 transition-all placeholder:text-white/20"
-                    style={{ padding: '1.25rem 1.5rem', backgroundColor: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '1rem', color: '#fff' }}
+                    style={{
+                      width: '100%',
+                      fontFamily: 'var(--font-sans)',
+                      fontSize: '15px',
+                      color: 'var(--color-primary)',
+                      backgroundColor: 'rgba(34, 22, 18, 0.03)',
+                      border: '1px solid rgba(34, 22, 18, 0.1)',
+                      borderRadius: '100px',
+                      padding: '14px 20px',
+                      outline: 'none',
+                      transition: 'all 0.3s ease',
+                    }}
+                    onFocus={(e) => {
+                      e.currentTarget.style.borderColor = 'var(--color-secondary)';
+                      e.currentTarget.style.backgroundColor = '#ffffff';
+                    }}
+                    onBlur={(e) => {
+                      e.currentTarget.style.borderColor = 'rgba(34, 22, 18, 0.1)';
+                      e.currentTarget.style.backgroundColor = 'rgba(34, 22, 18, 0.03)';
+                    }}
                   />
                 </div>
 
                 {/* Email & Phone Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                  <div className="flex flex-col gap-3">
-                    <label htmlFor="email" className="font-label-caps text-[0.65rem] tracking-[0.2em]" style={{ color: 'var(--color-secondary)' }}>
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem' }} className="form-row">
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                    <label
+                      htmlFor="email"
+                      style={{
+                        fontFamily: 'var(--font-sans)',
+                        fontSize: '11px',
+                        fontWeight: 700,
+                        textTransform: 'uppercase',
+                        letterSpacing: '0.15em',
+                        color: 'var(--color-secondary)',
+                      }}
+                    >
                       Email Address
                     </label>
                     <input
@@ -133,13 +252,41 @@ export default function ConsultationPage() {
                       type="email"
                       required
                       placeholder="hello@example.com"
-                      className="w-full text-lg focus:outline-none focus:bg-white/10 transition-all placeholder:text-white/20"
-                      style={{ padding: '1.25rem 1.5rem', backgroundColor: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '1rem', color: '#fff' }}
+                      style={{
+                        width: '100%',
+                        fontFamily: 'var(--font-sans)',
+                        fontSize: '15px',
+                        color: 'var(--color-primary)',
+                        backgroundColor: 'rgba(34, 22, 18, 0.03)',
+                        border: '1px solid rgba(34, 22, 18, 0.1)',
+                        borderRadius: '100px',
+                        padding: '14px 20px',
+                        outline: 'none',
+                        transition: 'all 0.3s ease',
+                      }}
+                      onFocus={(e) => {
+                        e.currentTarget.style.borderColor = 'var(--color-secondary)';
+                        e.currentTarget.style.backgroundColor = '#ffffff';
+                      }}
+                      onBlur={(e) => {
+                        e.currentTarget.style.borderColor = 'rgba(34, 22, 18, 0.1)';
+                        e.currentTarget.style.backgroundColor = 'rgba(34, 22, 18, 0.03)';
+                      }}
                     />
                   </div>
 
-                  <div className="flex flex-col gap-3">
-                    <label htmlFor="phone" className="font-label-caps text-[0.65rem] tracking-[0.2em]" style={{ color: 'var(--color-secondary)' }}>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                    <label
+                      htmlFor="phone"
+                      style={{
+                        fontFamily: 'var(--font-sans)',
+                        fontSize: '11px',
+                        fontWeight: 700,
+                        textTransform: 'uppercase',
+                        letterSpacing: '0.15em',
+                        color: 'var(--color-secondary)',
+                      }}
+                    >
                       Phone Number
                     </label>
                     <input
@@ -147,42 +294,110 @@ export default function ConsultationPage() {
                       name="phone"
                       type="tel"
                       placeholder="+1 (555) 000-0000"
-                      className="w-full text-lg focus:outline-none focus:bg-white/10 transition-all placeholder:text-white/20"
-                      style={{ padding: '1.25rem 1.5rem', backgroundColor: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '1rem', color: '#fff' }}
+                      style={{
+                        width: '100%',
+                        fontFamily: 'var(--font-sans)',
+                        fontSize: '15px',
+                        color: 'var(--color-primary)',
+                        backgroundColor: 'rgba(34, 22, 18, 0.03)',
+                        border: '1px solid rgba(34, 22, 18, 0.1)',
+                        borderRadius: '100px',
+                        padding: '14px 20px',
+                        outline: 'none',
+                        transition: 'all 0.3s ease',
+                      }}
+                      onFocus={(e) => {
+                        e.currentTarget.style.borderColor = 'var(--color-secondary)';
+                        e.currentTarget.style.backgroundColor = '#ffffff';
+                      }}
+                      onBlur={(e) => {
+                        e.currentTarget.style.borderColor = 'rgba(34, 22, 18, 0.1)';
+                        e.currentTarget.style.backgroundColor = 'rgba(34, 22, 18, 0.03)';
+                      }}
                     />
                   </div>
                 </div>
 
                 {/* Treatment Focus */}
-                <div className="flex flex-col gap-3 relative">
-                  <label htmlFor="treatment" className="font-label-caps text-[0.65rem] tracking-[0.2em]" style={{ color: 'var(--color-secondary)' }}>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                  <label
+                    htmlFor="treatment"
+                    style={{
+                      fontFamily: 'var(--font-sans)',
+                      fontSize: '11px',
+                      fontWeight: 700,
+                      textTransform: 'uppercase',
+                      letterSpacing: '0.15em',
+                      color: 'var(--color-secondary)',
+                    }}
+                  >
                     Preferred Focus
                   </label>
-                  <div className="relative">
+                  <div style={{ position: 'relative' }}>
                     <select
                       id="treatment"
                       name="treatment"
-                      className="w-full text-lg focus:outline-none focus:bg-white/10 transition-all appearance-none cursor-pointer"
-                      style={{ padding: '1.25rem 1.5rem', backgroundColor: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '1rem', color: '#fff' }}
+                      style={{
+                        width: '100%',
+                        fontFamily: 'var(--font-sans)',
+                        fontSize: '15px',
+                        color: 'var(--color-primary)',
+                        backgroundColor: 'rgba(34, 22, 18, 0.03)',
+                        border: '1px solid rgba(34, 22, 18, 0.1)',
+                        borderRadius: '100px',
+                        padding: '14px 20px',
+                        outline: 'none',
+                        cursor: 'pointer',
+                        appearance: 'none',
+                        transition: 'all 0.3s ease',
+                      }}
+                      onFocus={(e) => {
+                        e.currentTarget.style.borderColor = 'var(--color-secondary)';
+                        e.currentTarget.style.backgroundColor = '#ffffff';
+                      }}
+                      onBlur={(e) => {
+                        e.currentTarget.style.borderColor = 'rgba(34, 22, 18, 0.1)';
+                        e.currentTarget.style.backgroundColor = 'rgba(34, 22, 18, 0.03)';
+                      }}
                       defaultValue=""
                     >
-                      <option value="" disabled className="bg-[#042419] text-white/50">Select an area of focus</option>
-                      <option value="dosha" className="bg-[#042419] text-white">Dosha Balancing Assessment</option>
-                      <option value="panchakarma" className="bg-[#042419] text-white">Panchakarma Consultation</option>
-                      <option value="skin" className="bg-[#042419] text-white">Radiance &amp; Skin Rituals</option>
-                      <option value="womens" className="bg-[#042419] text-white">Women&apos;s Wellness</option>
-                      <option value="chronic" className="bg-[#042419] text-white">Chronic Disease Management</option>
-                      <option value="general" className="bg-[#042419] text-white">General Wellness Inquiry</option>
+                      <option value="" disabled style={{ color: 'rgba(34, 22, 18, 0.4)' }}>Select an area of focus</option>
+                      <option value="dosha">Dosha Balancing Assessment</option>
+                      <option value="panchakarma">Panchakarma Consultation</option>
+                      <option value="skin">Radiance &amp; Skin Rituals</option>
+                      <option value="womens">Women&apos;s Wellness</option>
+                      <option value="chronic">Chronic Disease Management</option>
+                      <option value="general">General Wellness Inquiry</option>
                     </select>
-                    <span className="material-symbols-outlined absolute right-6 top-1/2 -translate-y-1/2 text-white/40 pointer-events-none">
+                    <span 
+                      className="material-icons" 
+                      style={{ 
+                        position: 'absolute', 
+                        right: '20px', 
+                        top: '50%', 
+                        transform: 'translateY(-50%)', 
+                        color: 'var(--color-secondary)',
+                        pointerEvents: 'none'
+                      }}
+                    >
                       expand_more
                     </span>
                   </div>
                 </div>
 
                 {/* Concern */}
-                <div className="flex flex-col gap-3">
-                  <label htmlFor="concern" className="font-label-caps text-[0.65rem] tracking-[0.2em]" style={{ color: 'var(--color-secondary)' }}>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                  <label
+                    htmlFor="concern"
+                    style={{
+                      fontFamily: 'var(--font-sans)',
+                      fontSize: '11px',
+                      fontWeight: 700,
+                      textTransform: 'uppercase',
+                      letterSpacing: '0.15em',
+                      color: 'var(--color-secondary)',
+                    }}
+                  >
                     Primary Concern
                   </label>
                   <textarea
@@ -190,23 +405,78 @@ export default function ConsultationPage() {
                     name="concern"
                     rows={4}
                     placeholder="Please briefly describe what brings you to us..."
-                    className="w-full text-lg focus:outline-none focus:bg-white/10 transition-all resize-none placeholder:text-white/20"
-                    style={{ padding: '1.5rem', backgroundColor: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '1rem', color: '#fff' }}
+                    style={{
+                      width: '100%',
+                      fontFamily: 'var(--font-sans)',
+                      fontSize: '15px',
+                      color: 'var(--color-primary)',
+                      backgroundColor: 'rgba(34, 22, 18, 0.03)',
+                      border: '1px solid rgba(34, 22, 18, 0.1)',
+                      borderRadius: '1.5rem',
+                      padding: '18px 20px',
+                      outline: 'none',
+                      resize: 'none',
+                      transition: 'all 0.3s ease',
+                    }}
+                    onFocus={(e) => {
+                      e.currentTarget.style.borderColor = 'var(--color-secondary)';
+                      e.currentTarget.style.backgroundColor = '#ffffff';
+                    }}
+                    onBlur={(e) => {
+                      e.currentTarget.style.borderColor = 'rgba(34, 22, 18, 0.1)';
+                      e.currentTarget.style.backgroundColor = 'rgba(34, 22, 18, 0.03)';
+                    }}
                   />
                 </div>
 
-                {/* Submit */}
-                <div className="pt-8">
+                {/* Submit Button */}
+                <div style={{ marginTop: '1rem', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                   <button
                     type="submit"
-                    className="group relative w-full overflow-hidden rounded-full font-label-caps text-[0.8rem] tracking-[0.2em] flex items-center justify-center gap-4 transition-all duration-500 hover:scale-[1.02]"
-                    style={{ background: 'var(--color-secondary)', color: 'var(--color-primary)', padding: '1.5rem' }}
+                    style={{
+                      width: '100%',
+                      fontFamily: 'var(--font-sans)',
+                      fontSize: '13px',
+                      fontWeight: 700,
+                      textTransform: 'uppercase',
+                      letterSpacing: '0.15em',
+                      color: 'var(--color-on-primary)',
+                      backgroundColor: 'var(--color-primary)',
+                      border: 'none',
+                      borderRadius: '100px',
+                      padding: '18px 0',
+                      cursor: 'pointer',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      gap: '8px',
+                      transition: 'all 0.3s ease',
+                      boxShadow: '0 4px 15px rgba(34, 22, 18, 0.15)',
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.background = 'var(--color-secondary)';
+                      e.currentTarget.style.transform = 'translateY(-1px)';
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.background = 'var(--color-primary)';
+                      e.currentTarget.style.transform = 'translateY(0)';
+                    }}
                   >
-                    <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-20 transition-opacity duration-500" />
-                    <span className="relative z-10">Request Consultation</span>
-                    <span className="material-symbols-outlined relative z-10 text-xl transition-transform duration-500 group-hover:translate-x-2">east</span>
+                    Request Consultation <span className="material-icons" style={{ fontSize: '18px' }}>arrow_forward</span>
                   </button>
-                  <p className="font-label-caps text-center text-white/40 mt-6 text-[0.55rem] tracking-[0.2em]">
+                  <p 
+                    style={{ 
+                      fontFamily: 'var(--font-sans)', 
+                      fontSize: '9px', 
+                      fontWeight: 700, 
+                      textTransform: 'uppercase', 
+                      letterSpacing: '0.2em', 
+                      color: 'var(--color-on-surface-variant)', 
+                      opacity: 0.6,
+                      textAlign: 'center',
+                      margin: 0
+                    }}
+                  >
                     YOUR INFORMATION IS SECURE &amp; CONFIDENTIAL
                   </p>
                 </div>
@@ -215,6 +485,19 @@ export default function ConsultationPage() {
           )}
         </div>
       </div>
+
+      <style>{`
+        @media (max-width: 900px) {
+          .consult-grid {
+            grid-template-columns: 1fr !important;
+            gap: 4rem !important;
+          }
+          .form-row {
+            grid-template-columns: 1fr !important;
+            gap: 1.75rem !important;
+          }
+        }
+      `}</style>
     </main>
   );
 }

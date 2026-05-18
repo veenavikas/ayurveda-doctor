@@ -5,58 +5,58 @@
 /* ── Design Tokens ──────────────────────────────── */
 @theme {
   /* Colors */
-  --color-primary:                 #042419;
-  --color-primary-container:       #1b3a2d;
-  --color-primary-fixed:           #c7ebd8;
-  --color-primary-fixed-dim:       #accebc;
-  --color-on-primary:              #ffffff;
-  --color-on-primary-fixed:        #012115;
-  --color-on-primary-fixed-variant:#2e4d3f;
-  --color-on-primary-container:    #83a493;
-  --color-inverse-primary:         #accebc;
+  --color-primary:                 #042419; /* Deep emerald green from the Susrutha logo */
+  --color-primary-container:       #1B3A2D; /* Warm green contrast background */
+  --color-primary-fixed:           #E2DEC9; /* Soft gold-accent beige */
+  --color-primary-fixed-dim:       #D2CCA9;
+  --color-on-primary:              #F5F3EC; /* Serene warm cream text on dark background */
+  --color-on-primary-fixed:        #042419;
+  --color-on-primary-fixed-variant:#2E4D3F;
+  --color-on-primary-container:    #F5F3EC;
+  --color-inverse-primary:         #D2CCA9;
 
-  --color-secondary:               #7e5700;
-  --color-secondary-container:     #fec256;
-  --color-secondary-fixed:         #ffdeab;
-  --color-secondary-fixed-dim:     #f8bc51;
-  --color-on-secondary:            #ffffff;
-  --color-on-secondary-fixed:      #281900;
-  --color-on-secondary-fixed-variant:#5f4100;
-  --color-on-secondary-container:  #734f00;
+  --color-secondary:               #C8922A; /* Luxurious warm gold from logo */
+  --color-secondary-container:     #F3EEDF; /* Soft warm cream-gold for organic badges */
+  --color-secondary-fixed:         #FBF9F4; /* Cozy warm cream card background */
+  --color-secondary-fixed-dim:     #F5F3EC;
+  --color-on-secondary:            #042419;
+  --color-on-secondary-fixed:      #042419;
+  --color-on-secondary-fixed-variant:#2E4D3F;
+  --color-on-secondary-container:  #1B3A2D;
 
-  --color-tertiary:                #211f16;
-  --color-tertiary-container:      #37342a;
-  --color-tertiary-fixed:          #e8e2d3;
-  --color-tertiary-fixed-dim:      #cbc6b8;
-  --color-on-tertiary:             #ffffff;
-  --color-on-tertiary-fixed:       #1d1c13;
-  --color-on-tertiary-fixed-variant:#4a473c;
-  --color-on-tertiary-container:   #a19c8f;
+  --color-tertiary:                #3E4E3B; /* Serene sage/herbal green accent */
+  --color-tertiary-container:      #FBF9F4;
+  --color-tertiary-fixed:          #FBF9F4;
+  --color-tertiary-fixed-dim:      #F5F3EC;
+  --color-on-tertiary:             #FBF9F4;
+  --color-on-tertiary-fixed:       #042419;
+  --color-on-tertiary-fixed-variant:#2E4D3F;
+  --color-on-tertiary-container:   #1B3A2D;
 
-  --color-background:              #fcf9f8;
-  --color-surface:                 #fcf9f8;
-  --color-surface-bright:          #fcf9f8;
-  --color-surface-dim:             #dcd9d9;
-  --color-surface-variant:         #e5e2e1;
-  --color-surface-container:       #f0eded;
-  --color-surface-container-low:   #f6f3f2;
-  --color-surface-container-high:  #eae7e7;
-  --color-surface-container-highest:#e5e2e1;
-  --color-surface-container-lowest:#ffffff;
-  --color-surface-tint:            #456556;
-  --color-on-surface:              #1b1b1b;
-  --color-on-surface-variant:      #414844;
-  --color-on-background:           #1b1b1b;
+  --color-background:              #F5F3EC; /* Cozy warm cream-sand base background matching original color palette but in Foresta aesthetic */
+  --color-surface:                 #F5F3EC;
+  --color-surface-bright:          #FBF9F4;
+  --color-surface-dim:             #EAE8DF;
+  --color-surface-variant:         #EDECD4;
+  --color-surface-container:       #FBF9F4; /* Cream card background */
+  --color-surface-container-low:   #FAF8F2;
+  --color-surface-container-high:  #EBEAE0;
+  --color-surface-container-highest:#E2E0D4;
+  --color-surface-container-lowest:#FFFFFF;
+  --color-surface-tint:            #C8922A;
+  --color-on-surface:              #1A2821; /* Clean dark-herbal green-charcoal for crisp readable text */
+  --color-on-surface-variant:      #3C4A42;
+  --color-on-background:           #1A2821;
 
-  --color-outline:                 #727974;
-  --color-outline-variant:         #c1c8c2;
-  --color-inverse-surface:         #313030;
-  --color-inverse-on-surface:      #f3f0ef;
+  --color-outline:                 #7A8A80;
+  --color-outline-variant:         #D6DAD7;
+  --color-inverse-surface:         #042419;
+  --color-inverse-on-surface:      #F5F3EC;
 
-  --color-error:                   #ba1a1a;
-  --color-error-container:         #ffdad6;
-  --color-on-error:                #ffffff;
-  --color-on-error-container:      #93000a;
+  --color-error:                   #BA1A1A;
+  --color-error-container:         #FFDAD6;
+  --color-on-error:                #FFFFFF;
+  --color-on-error-container:      #93000A;
 
   /* Typography */
   --font-garamond: 'EB Garamond', Georgia, serif;
@@ -294,13 +294,13 @@ body {
 
 /* ── Award Winning Gradients & Orbs ──────────────── */
 .gradient-mesh {
-  background: linear-gradient(120deg, var(--color-primary), #08402f, var(--color-primary-container), #021a11);
+  background: linear-gradient(120deg, var(--color-primary), #143528, var(--color-primary-container), #01160F);
   background-size: 400% 400%;
   animation: gradientMesh 15s ease infinite;
 }
 
 .light-gradient-mesh {
-  background: linear-gradient(120deg, var(--color-surface), #f4eedd, #e8dfc7, var(--color-surface-container));
+  background: linear-gradient(120deg, var(--color-surface), #FAF8F2, #EBEAE0, var(--color-surface-container));
   background-size: 400% 400%;
   animation: gradientMesh 15s ease infinite;
 }
