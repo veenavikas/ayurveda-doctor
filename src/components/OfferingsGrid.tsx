@@ -38,7 +38,7 @@ export default function OfferingsGrid() {
           key={idx}
           style={{
             background: 'var(--color-surface-container)',
-            border: '1.5px solid rgba(34, 22, 18, 0.05)',
+            border: '1.5px solid rgba(17, 36, 28, 0.05)',
             borderRadius: '2rem',
             padding: '3.5rem 3rem',
             transition: 'all 0.6s cubic-bezier(0.16, 1, 0.3, 1)',
@@ -46,19 +46,19 @@ export default function OfferingsGrid() {
             display: 'flex',
             flexDirection: 'column',
             gap: '1.5rem',
-            boxShadow: '0 8px 30px rgba(34, 22, 18, 0.02)',
+            boxShadow: '0 8px 30px rgba(17, 36, 28, 0.02)',
           }}
           onMouseEnter={(e) => {
             e.currentTarget.style.transform = 'translateY(-8px)';
-            e.currentTarget.style.boxShadow = '0 20px 40px rgba(34, 22, 18, 0.06)';
+            e.currentTarget.style.boxShadow = '0 20px 40px rgba(17, 36, 28, 0.06)';
             e.currentTarget.style.borderColor = 'rgba(139, 90, 43, 0.2)';
             const icon = e.currentTarget.querySelector('.practice-icon') as HTMLElement;
             if (icon) icon.style.transform = 'scale(1.1)';
           }}
           onMouseLeave={(e) => {
             e.currentTarget.style.transform = 'translateY(0)';
-            e.currentTarget.style.boxShadow = '0 8px 30px rgba(34, 22, 18, 0.02)';
-            e.currentTarget.style.borderColor = 'rgba(34, 22, 18, 0.05)';
+            e.currentTarget.style.boxShadow = '0 8px 30px rgba(17, 36, 28, 0.02)';
+            e.currentTarget.style.borderColor = 'rgba(17, 36, 28, 0.05)';
             const icon = e.currentTarget.querySelector('.practice-icon') as HTMLElement;
             if (icon) icon.style.transform = 'scale(1)';
           }}

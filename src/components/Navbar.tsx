@@ -38,10 +38,10 @@ export default function Navbar() {
           WebkitBackdropFilter: 'blur(20px)',
           borderRadius: '100px',
           padding: '12px 24px',
-          border: scrolled ? '1.5px solid rgba(34, 22, 18, 0.12)' : '1px solid rgba(34, 22, 18, 0.06)',
+          border: scrolled ? '1.5px solid rgba(17, 36, 28, 0.12)' : '1px solid rgba(17, 36, 28, 0.06)',
           boxShadow: scrolled 
-            ? '0 12px 30px rgba(34, 22, 18, 0.08), 0 2px 4px rgba(34, 22, 18, 0.02)' 
-            : '0 8px 24px rgba(34, 22, 18, 0.03)',
+            ? '0 12px 30px rgba(17, 36, 28, 0.08), 0 2px 4px rgba(17, 36, 28, 0.02)' 
+            : '0 8px 24px rgba(17, 36, 28, 0.03)',
           transition: 'all 0.5s cubic-bezier(0.16, 1, 0.3, 1)',
         }}
       >
@@ -165,7 +165,7 @@ export default function Navbar() {
                 padding: '10px 22px',
                 borderRadius: '100px',
                 textDecoration: 'none',
-                boxShadow: '0 4px 12px rgba(34, 22, 18, 0.15)',
+                boxShadow: '0 4px 12px rgba(17, 36, 28, 0.15)',
                 transition: 'all 0.4s cubic-bezier(0.16, 1, 0.3, 1)',
               }}
             >

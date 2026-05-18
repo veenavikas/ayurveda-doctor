@@ -14,7 +14,7 @@ export default function FaqItem({ question, answer }: FaqItemProps) {
     <div
       style={{
         background: 'var(--color-surface-container-low)',
-        border: '1px solid rgba(34, 22, 18, 0.05)',
+        border: '1px solid rgba(17, 36, 28, 0.05)',
         borderRadius: '1.5rem',
         padding: '1.75rem 2rem',
         cursor: 'pointer',

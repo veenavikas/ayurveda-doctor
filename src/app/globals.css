@@ -6,52 +6,52 @@
 @theme {
   /* Colors */
   --color-primary:                 #042419; /* Deep emerald green from the Susrutha logo */
-  --color-primary-container:       #1B3A2D; /* Warm green contrast background */
-  --color-primary-fixed:           #E2DEC9; /* Soft gold-accent beige */
-  --color-primary-fixed-dim:       #D2CCA9;
-  --color-on-primary:              #F5F3EC; /* Serene warm cream text on dark background */
+  --color-primary-container:       #153A2C; /* Warm green contrast background */
+  --color-primary-fixed:           #DDE8DF; /* Soft elegant sage-mist accent */
+  --color-primary-fixed-dim:       #CAD8CD;
+  --color-on-primary:              #F7FAF8; /* Serene warm leaf-white text */
   --color-on-primary-fixed:        #042419;
-  --color-on-primary-fixed-variant:#2E4D3F;
-  --color-on-primary-container:    #F5F3EC;
-  --color-inverse-primary:         #D2CCA9;
+  --color-on-primary-fixed-variant:#1E3E30;
+  --color-on-primary-container:    #F7FAF8;
+  --color-inverse-primary:         #CAD8CD;
 
   --color-secondary:               #C8922A; /* Luxurious warm gold from logo */
-  --color-secondary-container:     #F3EEDF; /* Soft warm cream-gold for organic badges */
-  --color-secondary-fixed:         #FBF9F4; /* Cozy warm cream card background */
-  --color-secondary-fixed-dim:     #F5F3EC;
+  --color-secondary-container:     #EBF0EC; /* Soft minty-gold container */
+  --color-secondary-fixed:         #F7FAF8; /* Cozy soft leaf-white container */
+  --color-secondary-fixed-dim:     #EFF3F0;
   --color-on-secondary:            #042419;
   --color-on-secondary-fixed:      #042419;
-  --color-on-secondary-fixed-variant:#2E4D3F;
-  --color-on-secondary-container:  #1B3A2D;
+  --color-on-secondary-fixed-variant:#1E3E30;
+  --color-on-secondary-container:  #153A2C;
 
-  --color-tertiary:                #3E4E3B; /* Serene sage/herbal green accent */
-  --color-tertiary-container:      #FBF9F4;
-  --color-tertiary-fixed:          #FBF9F4;
-  --color-tertiary-fixed-dim:      #F5F3EC;
-  --color-on-tertiary:             #FBF9F4;
+  --color-tertiary:                #2A4D3B; /* Serene deep herbal green accent */
+  --color-tertiary-container:      #F7FAF8;
+  --color-tertiary-fixed:          #F7FAF8;
+  --color-tertiary-fixed-dim:      #EFF3F0;
+  --color-on-tertiary:             #F7FAF8;
   --color-on-tertiary-fixed:       #042419;
-  --color-on-tertiary-fixed-variant:#2E4D3F;
-  --color-on-tertiary-container:   #1B3A2D;
+  --color-on-tertiary-fixed-variant:#1E3E30;
+  --color-on-tertiary-container:   #153A2C;
 
-  --color-background:              #F5F3EC; /* Cozy warm cream-sand base background matching original color palette but in Foresta aesthetic */
-  --color-surface:                 #F5F3EC;
-  --color-surface-bright:          #FBF9F4;
-  --color-surface-dim:             #EAE8DF;
-  --color-surface-variant:         #EDECD4;
-  --color-surface-container:       #FBF9F4; /* Cream card background */
-  --color-surface-container-low:   #FAF8F2;
-  --color-surface-container-high:  #EBEAE0;
-  --color-surface-container-highest:#E2E0D4;
+  --color-background:              #EFF3F0; /* Lush serene light herbal green-cream (instead of brown/sand) */
+  --color-surface:                 #EFF3F0;
+  --color-surface-bright:          #F7FAF8; /* Pure fresh leaf-white card background */
+  --color-surface-dim:             #E3EAE4; /* Soft organic clay-sage shadow tone */
+  --color-surface-variant:         #E4EAE5;
+  --color-surface-container:       #F7FAF8; /* Cream card background */
+  --color-surface-container-low:   #F5FAF6;
+  --color-surface-container-high:  #E2EAE3;
+  --color-surface-container-highest:#D7E2D8;
   --color-surface-container-lowest:#FFFFFF;
   --color-surface-tint:            #C8922A;
-  --color-on-surface:              #1A2821; /* Clean dark-herbal green-charcoal for crisp readable text */
-  --color-on-surface-variant:      #3C4A42;
-  --color-on-background:           #1A2821;
+  --color-on-surface:              #11241C; /* Clean dark-herbal green-charcoal for crisp readable text */
+  --color-on-surface-variant:      #2A3A31;
+  --color-on-background:           #11241C;
 
-  --color-outline:                 #7A8A80;
-  --color-outline-variant:         #D6DAD7;
+  --color-outline:                 #688A75;
+  --color-outline-variant:         #CAD5CE;
   --color-inverse-surface:         #042419;
-  --color-inverse-on-surface:      #F5F3EC;
+  --color-inverse-on-surface:      #EFF3F0;
 
   --color-error:                   #BA1A1A;
   --color-error-container:         #FFDAD6;

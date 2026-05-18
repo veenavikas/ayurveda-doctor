@@ -132,14 +132,14 @@ export default function TestimonialsPage() {
                 key={i}
                 style={{
                   background: 'var(--color-surface-container)',
-                  border: '1.5px solid rgba(34, 22, 18, 0.05)',
+                  border: '1.5px solid rgba(17, 36, 28, 0.05)',
                   borderRadius: '2.5rem',
                   padding: '4rem 3rem',
                   display: 'flex',
                   flexDirection: 'column',
                   justifyContent: 'space-between',
                   gap: '3rem',
-                  boxShadow: '0 8px 30px rgba(34, 22, 18, 0.02)',
+                  boxShadow: '0 8px 30px rgba(17, 36, 28, 0.02)',
                   transition: 'all 0.5s cubic-bezier(0.16, 1, 0.3, 1)',
                   cursor: 'pointer',
                 }}
@@ -196,7 +196,7 @@ export default function TestimonialsPage() {
       <style>{`
         .review-card:hover {
           transform: translateY(-6px);
-          box-shadow: 0 15px 35px rgba(34, 22, 18, 0.05) !important;
+          box-shadow: 0 15px 35px rgba(17, 36, 28, 0.05) !important;
           border-color: rgba(139, 90, 43, 0.2) !important;
         }
       `}</style>

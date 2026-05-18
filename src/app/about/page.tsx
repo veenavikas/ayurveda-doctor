@@ -96,10 +96,10 @@ export default function AboutPage() {
             <div 
               style={{ 
                 background: 'var(--color-surface-container)',
-                border: '1.5px solid rgba(34, 22, 18, 0.05)',
+                border: '1.5px solid rgba(17, 36, 28, 0.05)',
                 borderRadius: '2rem',
                 padding: '3rem 3.5rem',
-                boxShadow: '0 8px 30px rgba(34, 22, 18, 0.02)',
+                boxShadow: '0 8px 30px rgba(17, 36, 28, 0.02)',
                 width: '100%',
                 maxWidth: '480px',
               }}
@@ -118,7 +118,7 @@ export default function AboutPage() {
                   <span style={{ fontFamily: 'var(--font-sans)', fontSize: '11px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em', color: 'var(--color-secondary)' }}>Natural Herbs</span>
                 </div>
                 
-                <div style={{ width: '1px', height: '3.5rem', backgroundColor: 'rgba(34, 22, 18, 0.08)' }} className="stats-divider" />
+                <div style={{ width: '1px', height: '3.5rem', backgroundColor: 'rgba(17, 36, 28, 0.08)' }} className="stats-divider" />
                 
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
                   <span style={{ fontFamily: 'var(--font-garamond)', fontSize: '2.5rem', fontWeight: 500, color: 'var(--color-primary)', lineHeight: 1 }}>Authentic</span>
@@ -137,8 +137,8 @@ export default function AboutPage() {
                 aspectRatio: '0.8/1',
                 borderRadius: '200px 200px 30px 30px', // Premium dome shape
                 overflow: 'hidden',
-                boxShadow: '0 25px 60px rgba(34, 22, 18, 0.08)',
-                border: '1.5px solid rgba(34, 22, 18, 0.04)',
+                boxShadow: '0 25px 60px rgba(17, 36, 28, 0.08)',
+                border: '1.5px solid rgba(17, 36, 28, 0.04)',
               }}
               className="about-dome-container"
             >

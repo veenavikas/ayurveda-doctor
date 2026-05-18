@@ -107,8 +107,8 @@ export default function ConsultationPage() {
               aspectRatio: '1.2/1',
               borderRadius: '2rem',
               overflow: 'hidden',
-              boxShadow: '0 15px 35px rgba(34, 22, 18, 0.05)',
-              border: '1.5px solid rgba(34, 22, 18, 0.06)',
+              boxShadow: '0 15px 35px rgba(17, 36, 28, 0.05)',
+              border: '1.5px solid rgba(17, 36, 28, 0.06)',
             }}
           >
             <img
@@ -125,11 +125,11 @@ export default function ConsultationPage() {
             <div
               style={{
                 background: 'var(--color-surface-container)',
-                border: '1.5px solid rgba(34, 22, 18, 0.06)',
+                border: '1.5px solid rgba(17, 36, 28, 0.06)',
                 borderRadius: '2.5rem',
                 padding: '5rem 4rem',
                 textAlign: 'center',
-                boxShadow: '0 12px 40px rgba(34, 22, 18, 0.03)',
+                boxShadow: '0 12px 40px rgba(17, 36, 28, 0.03)',
                 display: 'flex',
                 flexDirection: 'column',
                 alignItems: 'center',
@@ -165,7 +165,7 @@ export default function ConsultationPage() {
                   padding: '14px 36px',
                   borderRadius: '100px',
                   textDecoration: 'none',
-                  boxShadow: '0 4px 15px rgba(34, 22, 18, 0.15)',
+                  boxShadow: '0 4px 15px rgba(17, 36, 28, 0.15)',
                   transition: 'background 0.3s ease',
                 }}
                 onMouseEnter={(e) => e.currentTarget.style.background = 'var(--color-secondary)'}
@@ -178,10 +178,10 @@ export default function ConsultationPage() {
             <div
               style={{
                 background: 'var(--color-surface-container)',
-                border: '1.5px solid rgba(34, 22, 18, 0.06)',
+                border: '1.5px solid rgba(17, 36, 28, 0.06)',
                 borderRadius: '2.5rem',
                 padding: '4.5rem 4rem',
-                boxShadow: '0 12px 40px rgba(34, 22, 18, 0.03)',
+                boxShadow: '0 12px 40px rgba(17, 36, 28, 0.03)',
               }}
             >
               <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1.75rem' }}>
@@ -212,8 +212,8 @@ export default function ConsultationPage() {
                       fontFamily: 'var(--font-sans)',
                       fontSize: '15px',
                       color: 'var(--color-primary)',
-                      backgroundColor: 'rgba(34, 22, 18, 0.03)',
-                      border: '1px solid rgba(34, 22, 18, 0.1)',
+                      backgroundColor: 'rgba(17, 36, 28, 0.03)',
+                      border: '1px solid rgba(17, 36, 28, 0.1)',
                       borderRadius: '100px',
                       padding: '14px 20px',
                       outline: 'none',
@@ -224,8 +224,8 @@ export default function ConsultationPage() {
                       e.currentTarget.style.backgroundColor = '#ffffff';
                     }}
                     onBlur={(e) => {
-                      e.currentTarget.style.borderColor = 'rgba(34, 22, 18, 0.1)';
-                      e.currentTarget.style.backgroundColor = 'rgba(34, 22, 18, 0.03)';
+                      e.currentTarget.style.borderColor = 'rgba(17, 36, 28, 0.1)';
+                      e.currentTarget.style.backgroundColor = 'rgba(17, 36, 28, 0.03)';
                     }}
                   />
                 </div>
@@ -257,8 +257,8 @@ export default function ConsultationPage() {
                         fontFamily: 'var(--font-sans)',
                         fontSize: '15px',
                         color: 'var(--color-primary)',
-                        backgroundColor: 'rgba(34, 22, 18, 0.03)',
-                        border: '1px solid rgba(34, 22, 18, 0.1)',
+                        backgroundColor: 'rgba(17, 36, 28, 0.03)',
+                        border: '1px solid rgba(17, 36, 28, 0.1)',
                         borderRadius: '100px',
                         padding: '14px 20px',
                         outline: 'none',
@@ -269,8 +269,8 @@ export default function ConsultationPage() {
                         e.currentTarget.style.backgroundColor = '#ffffff';
                       }}
                       onBlur={(e) => {
-                        e.currentTarget.style.borderColor = 'rgba(34, 22, 18, 0.1)';
-                        e.currentTarget.style.backgroundColor = 'rgba(34, 22, 18, 0.03)';
+                        e.currentTarget.style.borderColor = 'rgba(17, 36, 28, 0.1)';
+                        e.currentTarget.style.backgroundColor = 'rgba(17, 36, 28, 0.03)';
                       }}
                     />
                   </div>
@@ -299,8 +299,8 @@ export default function ConsultationPage() {
                         fontFamily: 'var(--font-sans)',
                         fontSize: '15px',
                         color: 'var(--color-primary)',
-                        backgroundColor: 'rgba(34, 22, 18, 0.03)',
-                        border: '1px solid rgba(34, 22, 18, 0.1)',
+                        backgroundColor: 'rgba(17, 36, 28, 0.03)',
+                        border: '1px solid rgba(17, 36, 28, 0.1)',
                         borderRadius: '100px',
                         padding: '14px 20px',
                         outline: 'none',
@@ -311,8 +311,8 @@ export default function ConsultationPage() {
                         e.currentTarget.style.backgroundColor = '#ffffff';
                       }}
                       onBlur={(e) => {
-                        e.currentTarget.style.borderColor = 'rgba(34, 22, 18, 0.1)';
-                        e.currentTarget.style.backgroundColor = 'rgba(34, 22, 18, 0.03)';
+                        e.currentTarget.style.borderColor = 'rgba(17, 36, 28, 0.1)';
+                        e.currentTarget.style.backgroundColor = 'rgba(17, 36, 28, 0.03)';
                       }}
                     />
                   </div>
@@ -342,8 +342,8 @@ export default function ConsultationPage() {
                         fontFamily: 'var(--font-sans)',
                         fontSize: '15px',
                         color: 'var(--color-primary)',
-                        backgroundColor: 'rgba(34, 22, 18, 0.03)',
-                        border: '1px solid rgba(34, 22, 18, 0.1)',
+                        backgroundColor: 'rgba(17, 36, 28, 0.03)',
+                        border: '1px solid rgba(17, 36, 28, 0.1)',
                         borderRadius: '100px',
                         padding: '14px 20px',
                         outline: 'none',
@@ -356,12 +356,12 @@ export default function ConsultationPage() {
                         e.currentTarget.style.backgroundColor = '#ffffff';
                       }}
                       onBlur={(e) => {
-                        e.currentTarget.style.borderColor = 'rgba(34, 22, 18, 0.1)';
-                        e.currentTarget.style.backgroundColor = 'rgba(34, 22, 18, 0.03)';
+                        e.currentTarget.style.borderColor = 'rgba(17, 36, 28, 0.1)';
+                        e.currentTarget.style.backgroundColor = 'rgba(17, 36, 28, 0.03)';
                       }}
                       defaultValue=""
                     >
-                      <option value="" disabled style={{ color: 'rgba(34, 22, 18, 0.4)' }}>Select an area of focus</option>
+                      <option value="" disabled style={{ color: 'rgba(17, 36, 28, 0.4)' }}>Select an area of focus</option>
                       <option value="dosha">Dosha Balancing Assessment</option>
                       <option value="panchakarma">Panchakarma Consultation</option>
                       <option value="skin">Radiance &amp; Skin Rituals</option>
@@ -410,8 +410,8 @@ export default function ConsultationPage() {
                       fontFamily: 'var(--font-sans)',
                       fontSize: '15px',
                       color: 'var(--color-primary)',
-                      backgroundColor: 'rgba(34, 22, 18, 0.03)',
-                      border: '1px solid rgba(34, 22, 18, 0.1)',
+                      backgroundColor: 'rgba(17, 36, 28, 0.03)',
+                      border: '1px solid rgba(17, 36, 28, 0.1)',
                       borderRadius: '1.5rem',
                       padding: '18px 20px',
                       outline: 'none',
@@ -423,8 +423,8 @@ export default function ConsultationPage() {
                       e.currentTarget.style.backgroundColor = '#ffffff';
                     }}
                     onBlur={(e) => {
-                      e.currentTarget.style.borderColor = 'rgba(34, 22, 18, 0.1)';
-                      e.currentTarget.style.backgroundColor = 'rgba(34, 22, 18, 0.03)';
+                      e.currentTarget.style.borderColor = 'rgba(17, 36, 28, 0.1)';
+                      e.currentTarget.style.backgroundColor = 'rgba(17, 36, 28, 0.03)';
                     }}
                   />
                 </div>
@@ -451,7 +451,7 @@ export default function ConsultationPage() {
                       justifyContent: 'center',
                       gap: '8px',
                       transition: 'all 0.3s ease',
-                      boxShadow: '0 4px 15px rgba(34, 22, 18, 0.15)',
+                      boxShadow: '0 4px 15px rgba(17, 36, 28, 0.15)',
                     }}
                     onMouseEnter={(e) => {
                       e.currentTarget.style.background = 'var(--color-secondary)';

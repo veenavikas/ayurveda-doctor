@@ -141,7 +141,7 @@ export default function TreatmentsPage() {
           borderTopLeftRadius: '3.5rem',
           borderTopRightRadius: '3.5rem',
           borderTop: '1px solid rgba(226, 214, 197, 0.12)',
-          boxShadow: '0 -20px 50px rgba(34, 22, 18, 0.08)',
+          boxShadow: '0 -20px 50px rgba(17, 36, 28, 0.08)',
           position: 'relative',
         }}
         className="catalog-section"
@@ -199,12 +199,12 @@ export default function TreatmentsPage() {
                   className="group-hover:scale-105"
                 />
                 
-                {/* Elegant Warm Cocoa Overlay */}
+                {/* Elegant Warm Green Overlay */}
                 <div 
                   style={{ 
                     position: 'absolute', 
                     inset: 0, 
-                    background: 'linear-gradient(to top, rgba(34, 22, 18, 0.95) 0%, rgba(34, 22, 18, 0.35) 50%, transparent 100%)', 
+                    background: 'linear-gradient(to top, rgba(4, 36, 25, 0.95) 0%, rgba(4, 36, 25, 0.35) 50%, transparent 100%)', 
                     opacity: 0.95, 
                     transition: 'opacity 0.5s ease' 
                   }} 
@@ -238,7 +238,7 @@ export default function TreatmentsPage() {
                     display: 'flex', 
                     flexDirection: 'column', 
                     justifyContent: 'flex-end', 
-                    background: 'linear-gradient(to top, rgba(34, 22, 18, 0.98) 0%, rgba(34, 22, 18, 0.85) 60%, rgba(34, 22, 18, 0.4) 100%)', 
+                    background: 'linear-gradient(to top, rgba(4, 36, 25, 0.98) 0%, rgba(4, 36, 25, 0.85) 60%, rgba(4, 36, 25, 0.4) 100%)', 
                     backdropFilter: 'blur(8px)',
                     WebkitBackdropFilter: 'blur(8px)'
                   }}
@@ -248,7 +248,7 @@ export default function TreatmentsPage() {
                     <h2 style={{ fontFamily: 'var(--font-garamond)', fontSize: '2.2rem', fontWeight: 500, color: '#ffffff', margin: 0 }}>{title}</h2>
                     <p style={{ fontFamily: 'var(--font-sans)', fontSize: '14.5px', color: 'rgba(255,255,255,0.75)', lineHeight: '1.7', margin: 0 }}>{desc}</p>
                     <Link
-                      href="/consultation"
+                      href={`/treatments/${id}`}
                       className="treatment-link"
                       style={{
                         fontFamily: 'var(--font-sans)',
@@ -280,7 +280,7 @@ export default function TreatmentsPage() {
           width: '100%',
           padding: '8rem 5% 10rem',
           background: 'var(--color-surface-container)',
-          borderTop: '1.5px solid rgba(34, 22, 18, 0.05)',
+          borderTop: '1.5px solid rgba(17, 36, 28, 0.05)',
         }}
       >
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>

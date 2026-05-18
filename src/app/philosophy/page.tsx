@@ -101,8 +101,8 @@ export default function PhilosophyPage() {
           background: 'var(--color-surface-container)',
           borderTopLeftRadius: '3.5rem',
           borderTopRightRadius: '3.5rem',
-          borderTop: '1px solid rgba(34, 22, 18, 0.05)',
-          boxShadow: '0 -25px 60px rgba(34, 22, 18, 0.02)'
+          borderTop: '1px solid rgba(17, 36, 28, 0.05)',
+          boxShadow: '0 -25px 60px rgba(17, 36, 28, 0.02)'
         }}
       >
         {/* Bridge Ornament Circle */}
@@ -116,12 +116,12 @@ export default function PhilosophyPage() {
             height: '48px', 
             background: 'var(--color-surface-container)', 
             borderRadius: '50%', 
-            border: '1.5px solid rgba(34, 22, 18, 0.08)', 
+            border: '1.5px solid rgba(17, 36, 28, 0.08)', 
             display: 'flex', 
             alignItems: 'center', 
             justifyContent: 'center', 
             zIndex: 10, 
-            boxShadow: '0 4px 15px rgba(34, 22, 18, 0.02)' 
+            boxShadow: '0 4px 15px rgba(17, 36, 28, 0.02)' 
           }}
         >
            <span className="material-icons" style={{ color: 'var(--color-secondary)', fontSize: '18px' }}>air</span>
@@ -147,8 +147,8 @@ export default function PhilosophyPage() {
                   maxWidth: '400px',
                   borderRadius: '200px 200px 30px 30px', 
                   overflow: 'hidden', 
-                  boxShadow: '0 20px 40px rgba(34, 22, 18, 0.06)',
-                  border: '1.5px solid rgba(34, 22, 18, 0.04)' 
+                  boxShadow: '0 20px 40px rgba(17, 36, 28, 0.06)',
+                  border: '1.5px solid rgba(17, 36, 28, 0.04)' 
                 }}
               >
                 <img
@@ -181,7 +181,7 @@ export default function PhilosophyPage() {
                   <div
                     key={title}
                     style={{ 
-                      borderBottom: '1.5px solid rgba(34, 22, 18, 0.05)', 
+                      borderBottom: '1.5px solid rgba(17, 36, 28, 0.05)', 
                       paddingBottom: '1.5rem',
                       display: 'flex',
                       flexDirection: 'column',
@@ -205,7 +205,7 @@ export default function PhilosophyPage() {
           padding: '8rem 5% 10rem',
           position: 'relative',
           zIndex: 30,
-          borderTop: '1.5px solid rgba(34, 22, 18, 0.05)',
+          borderTop: '1.5px solid rgba(17, 36, 28, 0.05)',
         }}
       >
         {/* Bridge Ornament Circle */}
@@ -219,12 +219,12 @@ export default function PhilosophyPage() {
             height: '48px', 
             background: 'var(--color-background)', 
             borderRadius: '50%', 
-            border: '1.5px solid rgba(34, 22, 18, 0.08)', 
+            border: '1.5px solid rgba(17, 36, 28, 0.08)', 
             display: 'flex', 
             alignItems: 'center', 
             justifyContent: 'center', 
             zIndex: 10, 
-            boxShadow: '0 4px 15px rgba(34, 22, 18, 0.02)' 
+            boxShadow: '0 4px 15px rgba(17, 36, 28, 0.02)' 
           }}
         >
            <span className="material-icons" style={{ color: 'var(--color-secondary)', fontSize: '18px' }}>group_work</span>
@@ -260,8 +260,8 @@ export default function PhilosophyPage() {
                   padding: '4rem 3rem',
                   borderRadius: '2.5rem',
                   background: 'var(--color-surface-container)',
-                  border: '1.5px solid rgba(34, 22, 18, 0.05)',
-                  boxShadow: '0 8px 30px rgba(34, 22, 18, 0.02)',
+                  border: '1.5px solid rgba(17, 36, 28, 0.05)',
+                  boxShadow: '0 8px 30px rgba(17, 36, 28, 0.02)',
                   display: 'flex',
                   flexDirection: 'column',
                   gap: '1.5rem',
@@ -303,7 +303,7 @@ export default function PhilosophyPage() {
         @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
         .dosha-card:hover {
           transform: translateY(-6px);
-          box-shadow: 0 15px 35px rgba(34, 22, 18, 0.05) !important;
+          box-shadow: 0 15px 35px rgba(17, 36, 28, 0.05) !important;
           border-color: rgba(139, 90, 43, 0.2) !important;
         }
         @media (max-width: 900px) {

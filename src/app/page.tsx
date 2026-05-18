@@ -301,13 +301,13 @@ export default function HomePage() {
               key={step.num}
               style={{
                 background: 'var(--color-surface-container-low)',
-                border: '1px solid rgba(34, 22, 18, 0.05)',
+                border: '1px solid rgba(17, 36, 28, 0.05)',
                 borderRadius: '2rem',
                 padding: '3rem 2.5rem',
                 display: 'flex',
                 flexDirection: 'column',
                 gap: '1.5rem',
-                boxShadow: '0 4px 20px rgba(34, 22, 18, 0.01)',
+                boxShadow: '0 4px 20px rgba(17, 36, 28, 0.01)',
               }}
             >
               <span
@@ -352,8 +352,8 @@ export default function HomePage() {
       <section
         style={{
           background: 'var(--color-surface-container)',
-          borderTop: '1px solid rgba(34, 22, 18, 0.06)',
-          borderBottom: '1px solid rgba(34, 22, 18, 0.06)',
+          borderTop: '1px solid rgba(17, 36, 28, 0.06)',
+          borderBottom: '1px solid rgba(17, 36, 28, 0.06)',
           padding: '8rem 5%',
         }}
       >
@@ -442,7 +442,7 @@ export default function HomePage() {
                   key={highlight}
                   style={{
                     background: 'var(--color-background)',
-                    border: '1px solid rgba(34, 22, 18, 0.06)',
+                    border: '1px solid rgba(17, 36, 28, 0.06)',
                     borderRadius: '100px',
                     padding: '6px 14px',
                     fontSize: '13px',
@@ -463,7 +463,7 @@ export default function HomePage() {
                 borderRadius: '2rem',
                 overflow: 'hidden',
                 aspectRatio: '0.75/1',
-                boxShadow: '0 15px 35px rgba(34, 22, 18, 0.05)',
+                boxShadow: '0 15px 35px rgba(17, 36, 28, 0.05)',
               }}
             >
               <img
@@ -478,7 +478,7 @@ export default function HomePage() {
                 overflow: 'hidden',
                 aspectRatio: '0.75/1',
                 marginTop: '3rem',
-                boxShadow: '0 15px 35px rgba(34, 22, 18, 0.05)',
+                boxShadow: '0 15px 35px rgba(17, 36, 28, 0.05)',
               }}
             >
               <img
@@ -540,14 +540,14 @@ export default function HomePage() {
           <div
             style={{
               background: 'var(--color-surface-container)',
-              border: '1.5px solid rgba(34, 22, 18, 0.05)',
+              border: '1.5px solid rgba(17, 36, 28, 0.05)',
               borderRadius: '2.5rem',
               padding: '4rem 3rem',
               display: 'flex',
               flexDirection: 'column',
               justifyContent: 'space-between',
               gap: '3rem',
-              boxShadow: '0 8px 30px rgba(34, 22, 18, 0.02)',
+              boxShadow: '0 8px 30px rgba(17, 36, 28, 0.02)',
               position: 'relative',
             }}
           >
@@ -561,7 +561,7 @@ export default function HomePage() {
                 </p>
               </div>
 
-              <div style={{ height: '1px', backgroundColor: 'rgba(34, 22, 18, 0.08)' }} />
+              <div style={{ height: '1px', backgroundColor: 'rgba(17, 36, 28, 0.08)' }} />
 
               <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                 <span style={{ fontFamily: 'var(--font-sans)', fontSize: '12px', fontWeight: 700, textTransform: 'uppercase', color: 'var(--color-primary)' }}>
@@ -591,7 +591,7 @@ export default function HomePage() {
                   fontWeight: 600,
                   textAlign: 'center',
                   background: 'var(--color-background)',
-                  border: '1.5px solid rgba(34, 22, 18, 0.08)',
+                  border: '1.5px solid rgba(17, 36, 28, 0.08)',
                   color: 'var(--color-primary)',
                   padding: '14px 0',
                   borderRadius: '100px',
@@ -650,7 +650,7 @@ export default function HomePage() {
                 </p>
               </div>
 
-              <div style={{ height: '1px', backgroundColor: 'rgba(34, 22, 18, 0.08)' }} />
+              <div style={{ height: '1px', backgroundColor: 'rgba(17, 36, 28, 0.08)' }} />
 
               <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                 <span style={{ fontFamily: 'var(--font-sans)', fontSize: '12px', fontWeight: 700, textTransform: 'uppercase', color: 'var(--color-primary)' }}>
@@ -686,7 +686,7 @@ export default function HomePage() {
                   borderRadius: '100px',
                   textDecoration: 'none',
                   transition: 'all 0.3s ease',
-                  boxShadow: '0 4px 15px rgba(34, 22, 18, 0.15)',
+                  boxShadow: '0 4px 15px rgba(17, 36, 28, 0.15)',
                 }}
               >
                 Book Overnight Sanctuary
@@ -698,14 +698,14 @@ export default function HomePage() {
           <div
             style={{
               background: 'var(--color-surface-container)',
-              border: '1.5px solid rgba(34, 22, 18, 0.05)',
+              border: '1.5px solid rgba(17, 36, 28, 0.05)',
               borderRadius: '2.5rem',
               padding: '4rem 3rem',
               display: 'flex',
               flexDirection: 'column',
               justifyContent: 'space-between',
               gap: '3rem',
-              boxShadow: '0 8px 30px rgba(34, 22, 18, 0.02)',
+              boxShadow: '0 8px 30px rgba(17, 36, 28, 0.02)',
               position: 'relative',
             }}
           >
@@ -719,7 +719,7 @@ export default function HomePage() {
                 </p>
               </div>
 
-              <div style={{ height: '1px', backgroundColor: 'rgba(34, 22, 18, 0.08)' }} />
+              <div style={{ height: '1px', backgroundColor: 'rgba(17, 36, 28, 0.08)' }} />
 
               <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                 <span style={{ fontFamily: 'var(--font-sans)', fontSize: '12px', fontWeight: 700, textTransform: 'uppercase', color: 'var(--color-primary)' }}>
@@ -749,7 +749,7 @@ export default function HomePage() {
                   fontWeight: 600,
                   textAlign: 'center',
                   background: 'var(--color-background)',
-                  border: '1.5px solid rgba(34, 22, 18, 0.08)',
+                  border: '1.5px solid rgba(17, 36, 28, 0.08)',
                   color: 'var(--color-primary)',
                   padding: '14px 0',
                   borderRadius: '100px',
@@ -768,7 +768,7 @@ export default function HomePage() {
         <div
           style={{
             background: 'var(--color-surface-container-lowest)',
-            border: '1px solid rgba(34, 22, 18, 0.05)',
+            border: '1px solid rgba(17, 36, 28, 0.05)',
             borderRadius: '2rem',
             padding: '2.5rem 3rem',
             display: 'flex',
@@ -978,12 +978,12 @@ export default function HomePage() {
               key={i}
               style={{
                 background: 'var(--color-surface-container)',
-                border: '1.5px solid rgba(34, 22, 18, 0.05)',
+                border: '1.5px solid rgba(17, 36, 28, 0.05)',
                 borderRadius: '2rem',
                 overflow: 'hidden',
                 display: 'flex',
                 flexDirection: 'column',
-                boxShadow: '0 8px 24px rgba(34, 22, 18, 0.01)',
+                boxShadow: '0 8px 24px rgba(17, 36, 28, 0.01)',
               }}
             >
               {/* Image dome clip top */}
@@ -1050,7 +1050,7 @@ export default function HomePage() {
       <section
         style={{
           background: 'var(--color-surface-container)',
-          borderTop: '1px solid rgba(34, 22, 18, 0.06)',
+          borderTop: '1px solid rgba(17, 36, 28, 0.06)',
           padding: '8rem 5%',
         }}
       >

@@ -9,7 +9,7 @@ export default function Footer() {
         color: 'var(--color-primary)',
         position: 'relative',
         overflow: 'hidden',
-        borderTop: '1px solid rgba(34, 22, 18, 0.08)',
+        borderTop: '1px solid rgba(17, 36, 28, 0.08)',
         paddingTop: '6rem',
         paddingBottom: '4rem',
       }}
@@ -226,7 +226,7 @@ export default function Footer() {
           padding: '0 5%',
         }}
       >
-        <div style={{ height: '1px', background: 'rgba(34, 22, 18, 0.08)' }} />
+        <div style={{ height: '1px', background: 'rgba(17, 36, 28, 0.08)' }} />
       </div>
 
       {/* Bottom footer */}
